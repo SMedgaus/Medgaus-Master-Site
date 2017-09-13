@@ -1,1 +1,4 @@
 /* YOUR CUSTOM STYLES */
+.navbar .dropdown-menu a:hover {
+    color: #000 !important;
+}
