@@ -2,6 +2,9 @@
 .navbar .dropdown-menu a:hover {
     color: #000 !important;
 }
+.navbar .dropdown-menu .dropdown-item.active {
+    background-color: #DDD !important;
+}
 .text-justify {
   text-align: justify;
 }
