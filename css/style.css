@@ -13,3 +13,7 @@ body:lang(ru) q, body:lang(fr) q { quotes: "\00AB" "\00BB" "\201E" "\201C"; }
 body {
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+.h6 {
+	font-size: 1.1rem;
+}
