@@ -20,3 +20,12 @@ body {
 .h6 {
 	font-size: 1.1rem;
 }
+
+.report-number  {
+	font-size: 1.05rem;
+	font-weight: bold;
+	font-style: italic;
+}
+.report-number a:hover {
+	color: #3333ff;
+}
