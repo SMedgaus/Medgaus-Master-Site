@@ -1,12 +1,12 @@
 /* YOUR CUSTOM STYLES */
 .navbar .dropdown-menu a:hover {
-    color: #000 !important;
+	color: #000 !important;
 }
 .navbar .dropdown-menu .dropdown-item.active {
-    background-color: #DDD !important;
+	background-color: #DDD !important;
 }
 .text-justify {
-  text-align: justify;
+	text-align: justify;
 }
 /* Разные кавычки для разных языков (тег <q>) */
 body:lang(en) q { quotes: "\201C" "\201D" "\2018" "\2019"; }
@@ -28,4 +28,28 @@ body {
 }
 .report-number a:hover {
 	color: #3333ff;
+}
+
+.nav-pills .nav-item a {
+	color: #888;
+}
+
+.nav-pills .nav-item a:hover {
+	border-left: 1px solid;
+	border-radius: 0;
+}
+
+.nav-pills .nav-item a.active {
+	color: #45526E;
+	border-left: 2px solid;
+	box-shadow: none;
+}
+
+.nav-pills .nav-item a.active, 
+.nav-pills .nav-item a.active:active, 
+.nav-pills .nav-item a.active:focus, 
+.nav-pills .nav-item a.active:hover{
+	background-color: transparent;
+	border-radius: 0;
+	font-weight: bold;
 }
