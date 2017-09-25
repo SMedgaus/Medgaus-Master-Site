@@ -104,6 +104,7 @@
 							</div>
 							<h4 class="pt-4 pb-2 text-center">Отчёт о поиске (22.09.2017)</h4>
 
+							<!-- First report -->
 							<table class="table table-bordered table-hover">
 								<thead>
 									<tr class="blue-grey lighten-5">
@@ -682,25 +683,95 @@
 									</tr>
 								</tbody>
 							</table>
-
+							
+							<section id="results-analysis"></section>
 						</div>
 					</div>
 					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<h3 class="card-title text-center">Анализ результатов</h3>
+							<div class="text-justify">
+								<p>
+									Для получения полной картины результатов поиска, отображающих изменение количества информации по теме дипломной работы, необходимо оценить результаты по нескольким критериям:
+									<section id="language-criteria"></section>
+									<ul>
+										<li>количество результатов исходя из <span class="font-weight-bold">языка поиска</span>;</li>
+										<li>количество результатов каждой <span class="font-weight-bold">поисковой системы</span>;</li>
+										<li><span class="font-weight-bold">количественные изменения</span> результатов поиска за **вторая дата поиска**.</li>
+									</ul>
+								</p>
+								<h4>Критерий: по языку поиска</h4>
+								<p>
+									На рисунках 1 - 2 представлено процентное соотношение результатов поиска за 22.09.2017 и **вторая дата поиска** на разных языках. 
+								</p>
+
+								<div class="row">
+									<div class="col">
+										<figure class="figure">
+											<img src="../images/report/report-1-1.png" class="figure-img img-fluid rounded" alt="Рисунок 1">
+											<figcaption class="figure-caption text-center">Рисунок 1 &ndash; 22.09.2017</figcaption>
+										</figure>
+									</div>
+									<div class="col">
+										<figure class="figure">
+											<img src="../images/report/report-1-1.png" class="figure-img img-fluid rounded" alt="Рисунок 1">
+											<figcaption class="figure-caption text-center">Рисунок 2 &ndash; **вторая дата поиска**</figcaption>
+										</figure>
+									</div>
+								</div>
+
+								<p>
+									Как видно из рисунка 1, в поисковых результатах преобладают англоязычные ресурсы (<strong>63%</strong>), на втором месте идёт русский язык (<strong>26%</strong>) и на последнем украинский (<strong>11%</strong>). Это можно объяснить тем, что английский язык является международным языком и учёные всего мира публикуют статьи и материалы на английском языке для общего доступа. Следовательно, тема магистерской работы на английском языке освещена лучше всего.
+								</p>
+								<section id="search-engine-criteria"></section>
+								<p>
+									На рисунке 2 ...
+								</p>
+								<h4>Критерий: по поисковой системе</h4>
+								<p>
+									Результаты оценки по второму критерию представлены на рисунках 3 - 4. На них отображено количество полученных результатов поиска в различных поисковых системах. 
+								</p>
+								<p>
+									Как видно из рисунка 3, больше всего результатов предоставила система Yandex (<strong>44%</strong>), причём показала хорошее количество результатов на всех трёх языках, в среднем &ndash; <strong>21 млн</strong> на запрос. На втором и третьем местах, "общих" для трёх языков, стоят Google и Yahoo соответственно. На русском и украинском языках они показали примерно одинаковые результаты, как по качеству, так и по количеству (<strong>10 млн.</strong> и <strong>6 млн.</strong> на запрос соответственно). На английском языке Google "вырвалась" в лидеры и показала <strong>максимальное</strong> количество результатов для этого языка (<strong>536 млн.</strong> суммарно по всем запросам). Yahoo же может занять почётное третье место, показав результатов в <strong>1.6 раз меньше</strong> суммарно. Однако, необходимо отметить, что на суммарный результат Google сильно повлиял запрос о "Процессе обучения и трудоустройства студентов". Количество результатов по этому запросу составляет <strong>91% от суммы результатов по языку от Google</strong>. В остальных запросах лидирует Yahoo, что, как я думаю, справедливо ставит его на второе место вместе с Google.
+								</p>
+
+								<div class="row justify-content-center">
+									<figure class="figure">
+										<img src="../images/report/report-2-1.png" class="figure-img img-fluid rounded" alt="Рисунок 3">
+										<figcaption class="figure-caption text-center">Рисунок 3 &ndash; 22.09.2017</figcaption>
+									</figure>
+								</div>
+
+								<p>
+									Что же касается поисковых систем, ориентированных в основном на один язык, то ситуация неоднозначная. Rambler для русского языка показал даже немного больше результатов, чем Yandex (<strong>на 3 млн.</strong>), и при этом качество результатов поиска не хуже. Meta для украинского языка показала результатов значительно меньше, чем все остальные системы (всего <strong>56 тыс.</strong> результатов суммарно). Bing же для английского языка "поработал" на уровне и не уступает сильно остальным поисковым системам по результатам.
+								</p>
+							</div>
+						</div>
+					</div>
+
+
 				</div>
 			</div>
 			<!--Right sidebar-->
 			<div class="col-2">
-				<div id="scrollspy" class="sticky" style="position: fixed; top: 70px; width: 300px; z-index: 2;">
+				<div id="scrollspy" class="sticky" style="position: fixed; top: 70px;">
 					<ul class="nav nav-pills flex-column smooth-scroll" data-allow-hashes="true">
 						<li class="nav-item"><a class="nav-link active" href="#report-start">Описание поисковых запросов</a></li>
 						<li class="nav-item"><a class="nav-link" href="#first-report">Отчёт за 22.09.2017</a></li>
-						<li class="nav-item"><a class="nav-link" href="#second-report">Отчёт за **.**.2017</a></li>
+						<li class="nav-item"><a class="nav-link" href="#second-report">Отчёт за **вторая дата поиска**</a></li>
+						<li class="nav-item"><a class="nav-link" href="#results-analysis">Анализ результатов</a></li>
+						<li class="nav-item"><a class="nav-link" href="#language-criteria">Критерий: по языку поиска</a></li>
+						<li class="nav-item"><a class="nav-link" href="#search-engine-criteria">Критерий: по поисковой системе</a></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<footer class="page-footer center-on-small-only stylish-color-dark">
 		<!--Social buttons-->
 		<div class="social-section text-center container-fluid">
