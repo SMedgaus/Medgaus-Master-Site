@@ -8,6 +8,8 @@
 	<title>Японские кроссворды. Алгоритм решения &ndash; Медгаус Сергей Владимирович &ndash; Архитектура и функционирование программных агентов в имитационной модели трудоустройства выпускников вуза многоагентного типа</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="../css/font_awesome.min.css">
+	<!-- Highlighting code -->
+	<link rel="stylesheet" href="../css/code-styles/darcula.css">
 	<!-- Bootstrap core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
@@ -87,11 +89,11 @@
 									Сейчас есть очень много разных головоломок, которые позволяют весело и с интересом провести время. Среди них особенно выделяются японские головоломки: какуро, судоку и, конечно, японские кроссворды. Ещё в детстве мне нравилось решать судоку и я всегда смотрел на японские кроссворды, расположенные в тех же журналах, с недоумением. Они для меня были очень сложные и непонятные, хотя я пытался в них разобраться. Так как разобраться у меня не получилось, то я их оставил. И вернулся к ним лет через 10, когда был уже в университете. На летних каникулах было много свободного времени и я решил попробовать разобраться с ними ещё раз и уже в этот раз получилось. С того времени они являются, наверное, самыми любимыми головоломками.
 								</p>
 								<p>
-									Среди магистров нашего университета есть несколько людей, которые осветили эту тему в своём индивидуальном разделе [<a href="http://masters.donntu.ru/2013/fknt/avdzhi/ind/index.htm" target="_blank">1</a>, <a href="http://masters.donntu.ru/2016/fmf/vasylieva/ind/index.htm" target="_blank">2</a>]. Причём Нина Авджи сделала это очень хорошо, рассказав об общем описании кроссвордов, истории их возникновения, общей методике и принципах решения. Она также осветила особенности чёрно-белых и цветных кроссвордов. Однако сам алгоритм решения и методы не были описаны в подробностях, поэтому в данном разделе я хочу их описать формализованно, в таком виде, в котором их можно будет использовать для написания программы для решения японских кроссвордов "по-человечески".
+									Среди магистров нашего университета есть несколько людей, которые осветили эту тему в своём индивидуальном разделе [<a href="http://masters.donntu.ru/2013/fknt/avdzhi/ind/index.htm" target="_blank">1</a>, <a href="http://masters.donntu.ru/2016/fmf/vasylieva/ind/index.htm" target="_blank">2</a>]. Причём Нина Авджи сделала это очень хорошо, рассказав об общем описании кроссвордов, истории их возникновения, общей методике и принципах решения. Она также осветила особенности чёрно-белых и цветных кроссвордов. Однако сам алгоритм решения и методы не были описаны в подробностях, поэтому в данном разделе я хочу их описать формализованно, в таком виде, в котором их можно будет использовать для написания программы для решения японских кроссвордов "как человек".
 								</p>
 								<h4>Проектирование программной модели</h4>
 								<p>
-									Для того, чтобы подробно описать алгоритм решения японских кроссвордов сначала нужно в кратце описать программную модель и порядок её работы. Японский кроссворд состоит из основного поля, на котором расположены клетки, которые могут иметь 3 состояния: заполнена, пустая и неопределённая. Данное поле разделено на строки и столбцы, которые содержат числа, указывающие на количество  клеток, которые должны быть закрашены. Исходя из этого была разработана диаграмма классов, представленная на рисунке 1.
+									Для того, чтобы подробно описать алгоритм решения японских кроссвордов сначала нужно в кратце описать программную модель и порядок её работы. Японский кроссворд состоит из основного поля, на котором расположены клетки, которые могут иметь 3 состояния: заполнена, пустая и неопределённая. Данное поле разделено на строки и столбцы, рядом с которыми есть числа, указывающие на количество  клеток, которые должны быть закрашены. Исходя из этого была разработана диаграмма классов, представленная на рисунке 1.
 								</p>
 								<div class="row justify-content-center">
 									<figure class="figure">
@@ -99,7 +101,47 @@
 										<figcaption class="figure-caption text-center">Рисунок 1 &ndash; Диаграмма классов</figcaption>
 									</figure>
 								</div>
+								<p>
+									Алгоритм решения японского кроссворда будет применяться не ко всему кроссворду сразу, а поочерёдно для строк и столбцов, потому что по сути между ними нет существенных отличий. Следовательно алгоритм решения сводится к анализу одной линии клеток и соответствующих ей чисел, опредяляющих закраску.
+								</p>
+								<p>
+									В классе Nonogram есть множество номеров линий, которые находятся в очереди для анализа. После каждого проведённого анализа линии, метод возращает номера модифицированных ячеек для того, чтобы их можно было бы добавить в очередь на анализ, так как при модификации ячеек могли появиться какие-то изменения, которые продвинули бы решение.
+								</p>
 							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center">
+								Простое заполнение клеток согласно числовым группам
+							</h3>
+							<!--Card body-->
+							<p class="text-justify">
+								Строка полностью определена, количество заполняемых ячеек и минимальное количество пустых клеток между ними равны размеру строки. Она определена однозначно.
+							</p>
+							<pre><code class="java rounded">private void fillCellsAccordingGroups() {<br/>    int cellIndex = 0;<br/>    for (CellGroup cellGroup : cellGroups) {<br/>        for (int j = 0; j < cellGroup.getCellNumber(); j++) {<br/>            fillCell(cellIndex++, CellState.FILLED);<br/>        }<br/>        if (cellIndex < cells.size()) {<br/>            fillCell(cellIndex++, CellState.EMPTY);<br/>        }<br/>        cellGroup.crossOut();<br/>    }<br/>}<br/></code></pre>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center">
+								Наложение крайних позиций
+							</h3>
+							<p class="text-justify">
+								Заполнение областей, которые получаются при наложении крайних позиций числовых групп. Они заполняются, если разница между правой и левой позицией группы меньше или равно самому числу в числовой группе.
+							</p>
+							<!--Card body-->
+							<pre><code class="java rounded">private void fillIntersectedBoundedStatesCells() {<br/>    final int MIN_SPACE_BETWEEN_CELLS = 1;<br/>    for (int i = 0; i < cellGroups.size(); i++) {<br/>        int boundFromLeft = 0;<br/>        for (int j = 0; j < i; j++) {<br/>            boundFromLeft += cellGroups.get(j).getCellNumber();<br/>            boundFromLeft += MIN_SPACE_BETWEEN_CELLS;<br/>        }<br/>        boundFromLeft += cellGroups.get(i).getCellNumber();<br/><br/>        int boundFromRight = 0;<br/>        for (int j = cellGroups.size() - 1; j > i; j--) {<br/>            boundFromRight += cellGroups.get(j).getCellNumber();<br/>            boundFromRight += MIN_SPACE_BETWEEN_CELLS;<br/>        }<br/>        boundFromRight += cellGroups.get(i).getCellNumber();<br/><br/>        /*converting length to cells' indexes*/<br/>        boundFromLeft--;<br/>        boundFromRight = cells.size() - boundFromRight;<br/><br/>        if (cellGroups.get(i).getCellNumber() >= Math.abs(boundFromRight - boundFromLeft)) {<br/>            fillCells(boundFromRight, boundFromLeft, CellState.FILLED);<br/>        }<br/>    }<br/>}</code></pre>
 						</div>
 					</div>
 					<!--/.Card-->
@@ -114,7 +156,7 @@
 								Мои работы
 							</h3>
 							<!--Card body-->
-							
+
 							<!--Carousel Wrapper-->
 							<div id="my-carousel" class="carousel slide carousel-fade" data-ride="carousel">
 								<!--Indicators-->
@@ -172,6 +214,7 @@
 									<ol>
 										<li><a href="http://masters.donntu.ru/2013/fknt/avdzhi/ind/index.htm" target="_blank">Головоломки: японские кроссворды, Авджи Н.И.</a></li>
 										<li><a href="http://masters.donntu.ru/2016/fmf/vasylieva/ind/index.htm" target="_blank"> Японский кроссворд, Васильева А.В.</a></li>
+										<li><a href="http://www.nonograms.ru/methods" target="_blank"> Методы решения японских кроссвордов</a></li>
 									</ol>
 								</p>
 							</div>
@@ -276,6 +319,9 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<!-- MDB core JavaScript -->
 	<script type="text/javascript" src="../js/mdb.min.js"></script>
+
+	<script type="text/javascript" src="../js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 </body>
