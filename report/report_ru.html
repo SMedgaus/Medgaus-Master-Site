@@ -17,10 +17,6 @@
 </head>
 
 <body data-spy="scroll" data-target="#scrollspy" data-offset="70" style="position: relative;">
-	<!-- Place Stub -->
-	<section id="report-start"></section>
-	<img src="" height="70px">
-
 	<div class="container">
 		<!--Navbar-->
 		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
@@ -70,15 +66,34 @@
 			<!-- Collapsible content -->
 		</nav>
 		<!--/.Navbar-->
-		<div class="row">
+		<div class="row mt-5 pt-3">
 			<div class="col-10">
 				<div class="container mb-1">
 					<!--Card-->
 					<div class="card">
 						<!--Card content-->
 						<div class="card-body">
+							<!--Card image-->
+							<a href="../medgaus_big.jpg" target="_blank">
+								<img class="img-fluid float-left mr-3 hoverable" src="../medgaus.jpg" alt="Изображение магистра" width="180px" height="240px">
+							</a>
 							<!--Title-->
-							<h3 class="card-title text-center">
+							<h4 class="card-title">Медгаус Сергей Владимирович</h4>
+							<h5>Факультет компьютерных наук и технологий</h5>
+							<h5>Кафедра программной инженерии</h5>
+							<h5>Специальность <i><q>Программная инженерия</q></i></h5>
+							<h4><i><b>Архитектура и функционирование программных агентов в имитационной модели трудоустройства выпускников вуза многоагентного типа</b></i></h4>
+							<h5>Научный руководитель: к.т.н., доц. Федяев Олег Иванович</h5>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-3">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center" id="report-start">
 								Отчёт об информационном поиске
 							</h3>
 							<!--Card body-->
@@ -97,15 +112,14 @@
 								<p>
 									Для каждого из языков использовались 3 популярные поисковые системы, использование которых гарантировало хорошие результаты на всех языках &ndash; Google, Yahoo, Yandex. Также для каждого из языков по отдельности была использована <span class="font-weight-bold">дополнительная поисковая система</span>, которая подразумевала хорошие результаты для конкретного языка: для русского языка &ndash; Rambler, для украинского языка &ndash; Meta и для английского &ndash; Bing.
 								</p>
-								<section id="first-report"></section>
+								
 								<p>
 									Ниже приведены две таблицы с отчётами о поиске, которые разделяет временной промежуток в два месяца, а также ряд диаграмм, которые позволяют сравнить основные изменения, произошедшие за этот период.
 								</p>
 							</div>
-							<h4 class="pt-4 pb-2 text-center">Отчёт о поиске (22.09.2017)</h4>
-
+							<h4 id="first-report" class="pt-4 pb-2 text-center">Отчёт о поиске (22.09.2017)</h4>
 							<!-- First report -->
-							<table class="table table-bordered table-hover">
+							<table class="table table-hover">
 								<thead>
 									<tr class="blue-grey lighten-5">
 										<th class="text-center h6" width="45%">Поисковый запрос</th>
@@ -683,8 +697,6 @@
 									</tr>
 								</tbody>
 							</table>
-							
-							<section id="results-analysis"></section>
 						</div>
 					</div>
 					<!--/.Card-->
@@ -693,18 +705,17 @@
 					<div class="card mt-4">
 						<!--Card content-->
 						<div class="card-body">
-							<h3 class="card-title text-center">Анализ результатов</h3>
+							<h3 class="card-title text-center" id="results-analysis">Анализ результатов</h3>
 							<div class="text-justify">
 								<p>
 									Для получения полной картины результатов поиска, отображающих изменение количества информации по теме дипломной работы, необходимо оценить результаты по нескольким критериям:
-									<section id="language-criteria"></section>
 									<ul>
 										<li>количество результатов исходя из <span class="font-weight-bold">языка поиска</span>;</li>
 										<li>количество результатов каждой <span class="font-weight-bold">поисковой системы</span>;</li>
 										<li><span class="font-weight-bold">количественные изменения</span> результатов поиска за **вторая дата поиска**.</li>
 									</ul>
 								</p>
-								<h4>Критерий: по языку поиска</h4>
+								<h4 id="language-criteria">Критерий: по языку поиска</h4>
 								<p>
 									На рисунках 1 - 2 представлено процентное соотношение результатов поиска за 22.09.2017 и **вторая дата поиска** на разных языках. 
 								</p>
@@ -725,13 +736,12 @@
 								</div>
 
 								<p>
-									Как видно из рисунка 1, в поисковых результатах преобладают англоязычные ресурсы (<strong>63%</strong>), на втором месте идёт русский язык (<strong>26%</strong>) и на последнем украинский (<strong>11%</strong>). Это можно объяснить тем, что английский язык является международным языком и учёные всего мира публикуют статьи и материалы на английском языке для общего доступа. Следовательно, тема магистерской работы на английском языке освещена лучше всего.
+									Как видно из рисунка 1, в поисковых результатах преобладают англоязычные ресурсы (<strong>63%</strong>), на втором месте идёт русский язык (<strong>26%</strong>) и на последнем украинский (<strong>11%</strong>). Это можно объяснить тем, что английский язык является международным языком, и учёные всего мира публикуют статьи и материалы на английском языке для общего доступа. Следовательно, тема магистерской работы на английском языке освещена лучше всего.
 								</p>
-								<section id="search-engine-criteria"></section>
 								<p>
 									На рисунке 2 ...
 								</p>
-								<h4>Критерий: по поисковой системе</h4>
+								<h4 id="search-engine-criteria">Критерий: по поисковой системе</h4>
 								<p>
 									Результаты оценки по второму критерию представлены на рисунках 3 - 4. На них отображено количество полученных результатов поиска в различных поисковых системах. 
 								</p>
@@ -758,8 +768,8 @@
 			</div>
 			<!--Right sidebar-->
 			<div class="col-2">
-				<div id="scrollspy" class="sticky" style="position: fixed; top: 70px;">
-					<ul class="nav nav-pills flex-column smooth-scroll" data-allow-hashes="true">
+				<div id="scrollspy" class="sticky smooth-scroll" style="position: fixed; top: 70px;">
+					<ul class="nav nav-pills flex-column" data-allow-hashes="true">
 						<li class="nav-item"><a class="nav-link active" href="#report-start">Описание поисковых запросов</a></li>
 						<li class="nav-item"><a class="nav-link" href="#first-report">Отчёт за 22.09.2017</a></li>
 						<li class="nav-item"><a class="nav-link" href="#second-report">Отчёт за **вторая дата поиска**</a></li>
@@ -853,5 +863,7 @@
 	<script type="text/javascript" src="../js/mdb.min.js"></script>
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	<script type="text/javascript" src="../js/scrolling-script.js"></script>
 </body>
 </html>
