@@ -8,8 +8,6 @@
 	<title>Японские кроссворды. Алгоритм решения &ndash; Медгаус Сергей Владимирович &ndash; Архитектура и функционирование программных агентов в имитационной модели трудоустройства выпускников вуза многоагентного типа</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="../css/font_awesome.min.css">
-	<!-- Highlighting code -->
-	<link rel="stylesheet" href="../css/code-styles/darcula.css">
 	<!-- Bootstrap core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
@@ -107,7 +105,7 @@
 								<p>
 									Среди магистров нашего университета есть несколько людей, которые осветили эту тему в своём индивидуальном разделе [<a href="http://masters.donntu.ru/2013/fknt/avdzhi/ind/index.htm" target="_blank">1</a>, <a href="http://masters.donntu.ru/2016/fmf/vasylieva/ind/index.htm" target="_blank">2</a>]. Причём Нина Авджи сделала это очень хорошо, рассказав об общем описании кроссвордов, истории их возникновения, общей методике и принципах решения. Она также осветила особенности чёрно-белых и цветных кроссвордов. Однако сам алгоритм решения и методы не были описаны в подробностях, поэтому в данном разделе я хочу их описать формализовано, в таком виде, в котором их можно будет использовать для написания программы для решения японских кроссвордов "как человек".
 								</p>
-								<h4 id="program-model">Проектирование программной модели</h4>
+								<h4 class="text-center" id="program-model">Проектирование программной модели</h4>
 								<p>
 									Для того, чтобы подробно описать алгоритм решения японских кроссвордов сначала нужно вкратце описать программную модель и порядок её работы. Японский кроссворд состоит из основного поля, на котором расположены клетки, которые могут иметь 3 состояния: заполнена, пустая и неопределённая. Данное поле разделено на строки и столбцы, рядом с которыми есть числа, указывающие на количество  клеток, которые должны быть закрашены. Исходя из этого была разработана диаграмма классов, представленная на рисунке 1.
 								</p>
@@ -121,7 +119,13 @@
 									Алгоритм решения японского кроссворда будет применяться не ко всему кроссворду сразу, а поочерёдно для строк и столбцов, потому что по сути между ними нет существенных отличий. Следовательно, алгоритм решения сводится к анализу одной линии клеток и соответствующих ей чисел, определяющих закраску.
 								</p>
 								<p>
-									В классе Nonogram есть множество номеров линий, которые находятся в очереди для анализа. После каждого проведённого анализа линии, метод возвращает номера модифицированных ячеек для того, чтобы их можно было бы добавить в очередь на анализ, так как при модификации ячеек могли появиться какие-то изменения, которые продвинули бы решение.
+									В классе Nonogram есть очередь номеров линий для анализа. После каждого проведённого анализа линии, метод возвращает номера модифицированных ячеек для того, чтобы их можно было бы добавить в очередь на анализ, так как при модификации ячеек могли появиться какие-то изменения, которые продвинули бы решение.
+								</p>
+								<p>
+									Необходимо отметить, что разработанная программа не реализует все методы решения "как человек". Реализованы только методы, работающие с крайними группами и пустыми промежутками. Остальные методы подробно описаны в [<a href="https://en.wikipedia.org/wiki/Nonogram#Solution_techniques" target="_blank">8</a>].
+								</p>
+								<p>
+									Исходный код программы можно получить в [<a href="https://github.com/SMedgaus/Nonograms" target="_blank">9</a>].
 								</p>
 							</div>
 						</div>
@@ -133,12 +137,16 @@
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h3 class="card-title text-center" id="simple-filling">Простое заполнение клеток согласно числовым группам</h3>
-							<!--Card body-->
+							<h3 class="card-title text-center" id="border-intersection">Метод "Пересечение крайних границ"</h3>
 							<p class="text-justify">
-								Строка полностью определена, количество заполняемых ячеек и минимальное количество пустых клеток между ними равны размеру строки. Она определена однозначно.
+								Анализируется каждая числовая группа в линии и находятся крайняя правая и крайняя левая границы числовой группы. <b>Если разница между правой и левой границами больше или равна нулю</b>, то можно заполнить клетки, находящиеся между ними (включительно). Стоит отметить, что, как видно из рисунка, в итоговой линии закрашиваются группы, которые пересекаются только сами с собой, поэтому клетка №6 не закрашена, так как в разных позициях (левой и правой) она принадлежит разным числовым группам.
 							</p>
-							<pre><code class="java rounded">private void fillCellsAccordingGroups() {<br/>    int cellIndex = 0;<br/>    for (CellGroup cellGroup : cellGroups) {<br/>        for (int j = 0; j < cellGroup.getCellNumber(); j++) {<br/>            fillCell(cellIndex++, CellState.FILLED);<br/>        }<br/>        if (cellIndex < cells.size()) {<br/>            fillCell(cellIndex++, CellState.EMPTY);<br/>        }<br/>        cellGroup.crossOut();<br/>    }<br/>}<br/></code></pre>
+							<div class="row justify-content-center">
+								<figure class="figure">
+									<img src="../images/individual/overlapping-borders.png" class="figure-img img-fluid" alt="Пример анализа линии, используя пересечения крайних границ">
+									<figcaption class="figure-caption text-center">Рисунок 2 &ndash; Пример анализа линии, используя пересечения крайних границ</figcaption>
+								</figure>
+							</div>
 						</div>
 					</div>
 					<!--/.Card-->
@@ -148,12 +156,76 @@
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h3 class="card-title text-center" id="border-intersection">Наложение крайних позиций</h3>
+							<h3 class="card-title text-center" id="jumping-from-walls">Метод "Отталкивание от стен"</h3>
 							<p class="text-justify">
-								Заполнение областей, которые получаются при наложении крайних позиций числовых групп. Они заполняются, если разница между правой и левой позицией группы меньше или равно самому числу в числовой группе.
+								Анализируются крайние непустые промежутки. Если на расстоянии в числовую группу с края есть закрашенные клетки, то <b>можно закрасить клетки, начиная с  закрашенной и до клетки, равной величине числовой группы</b>.
 							</p>
-							<!--Card body-->
-							<pre><code class="java rounded">private void fillIntersectedBoundedStatesCells() {<br/>    final int MIN_SPACE_BETWEEN_CELLS = 1;<br/>    for (int i = 0; i < cellGroups.size(); i++) {<br/>        int boundFromLeft = 0;<br/>        for (int j = 0; j < i; j++) {<br/>            boundFromLeft += cellGroups.get(j).getCellNumber();<br/>            boundFromLeft += MIN_SPACE_BETWEEN_CELLS;<br/>        }<br/>        boundFromLeft += cellGroups.get(i).getCellNumber();<br/><br/>        int boundFromRight = 0;<br/>        for (int j = cellGroups.size() - 1; j > i; j--) {<br/>            boundFromRight += cellGroups.get(j).getCellNumber();<br/>            boundFromRight += MIN_SPACE_BETWEEN_CELLS;<br/>        }<br/>        boundFromRight += cellGroups.get(i).getCellNumber();<br/><br/>        /*converting length to cells' indexes*/<br/>        boundFromLeft--;<br/>        boundFromRight = cells.size() - boundFromRight;<br/><br/>        if (cellGroups.get(i).getCellNumber() >= Math.abs(boundFromRight - boundFromLeft)) {<br/>            fillCells(boundFromRight, boundFromLeft, CellState.FILLED);<br/>        }<br/>    }<br/>}</code></pre>
+							<p class="text-justify">
+								В случае, если количество закрашенных клеток равно величине числовой группы, то числовую группу можно вычеркнуть, а после группы вычеркнуть клетку (минимальное место между группами клеток).
+							</p>
+							<div class="row justify-content-center">
+								<figure class="figure">
+									<img src="../images/individual/jumping-from-walls.png" class="figure-img img-fluid" alt="Пример анализа линии, используя отталкивания от стен">
+									<figcaption class="figure-caption text-center">Рисунок 3 &ndash; Пример анализа линии, используя отталкивания от стен</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center" id="inaccessibility">Метод "Недосягаемость"</h3>
+							<p class="text-justify">
+								Анализируются крайние числовые группы. Если расстояние от начала неопределённого фрагмента линии до первой заполненной клетки меньше или равно крайней числовой группе, то необходимо <b>вычеркнуть клетки, до которых числовая группа "не достаёт"</b>.
+							</p>
+							<p class="text-justify">
+								Также необходимо рассмотреть случай, если в линии находится одна невычеркнутая группа. В таком случае необходимо вычеркнуть все клетки, которые находятся дальше от заполненных клеток на длину числовой группы.
+							</p>
+							<div class="row justify-content-center">
+								<figure class="figure">
+									<img src="../images/individual/inaccessibility.png" class="figure-img img-fluid" alt='Пример анализа линии, используя метод "Недосягаемость"'>
+									<figcaption class="figure-caption text-center">Рисунок 4 &ndash; Пример анализа линии, используя метод "Недосягаемость"</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center" id="small-empty-gaps">Метод "Не помещается"</h3>
+							<p class="text-justify">
+								Анализируются крайние промежутки с неопределёнными клетками. Берётся крайняя невычеркнутая числовая группа, и <b>если промежуток меньше, чем числовая группа, то клетки в нём вычёркиваются</b>.
+							</p>
+							<div class="row justify-content-center">
+								<figure class="figure">
+									<img src="../images/individual/small-empty-gaps.png" class="figure-img img-fluid" alt='Пример анализа линии, используя метод "Не помещается"'>
+									<figcaption class="figure-caption text-center">Рисунок 5 &ndash; Пример анализа линии, используя метод "Не помещается"</figcaption>
+								</figure>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center" id="program-working-example">Пример работы программы. <a href="http://www.nonograms.ru/nonograms/i/15350" target="_blank">Кроссворд <q>Динозавр</q></a></h3>
+							<div class="row justify-content-center">
+								<figure class="figure text-center">
+									<img src="../images/individual/dinosaur.gif" class="figure-img img-fluid" alt='Кроссворд "Динозавр"'>
+									<figcaption class="figure-caption text-center">Количество кадров: 79; Количество повторений: неограничено;<br>Задержка: 0.4 сек.; Длительность: 32 сек.; Размер анимации: 106 Кб</figcaption>
+								</figure>
+							</div>
 						</div>
 					</div>
 					<!--/.Card-->
@@ -216,13 +288,20 @@
 							<h3 class="card-title text-center" id="links">Ссылки</h3>
 							<!--Card body-->
 							<div class="text-justify">
-								<p>
-									<ol>
-										<li><a href="http://masters.donntu.ru/2013/fknt/avdzhi/ind/index.htm" target="_blank">Головоломки: японские кроссворды, Авджи Н.И.</a></li>
-										<li><a href="http://masters.donntu.ru/2016/fmf/vasylieva/ind/index.htm" target="_blank"> Японский кроссворд, Васильева А.В.</a></li>
-										<li><a href="http://www.nonograms.ru/methods" target="_blank"> Методы решения японских кроссвордов</a></li>
-									</ol>
-								</p>
+								<ol>
+									Индивидуальные разделы магистров:
+									<li><a href="http://masters.donntu.ru/2013/fknt/avdzhi/ind/index.htm" target="_blank">Головоломки: японские кроссворды, Авджи Н.И.</a></li>
+									<li><a href="http://masters.donntu.ru/2016/fmf/vasylieva/ind/index.htm" target="_blank"> Японский кроссворд, Васильева А.В.</a></li>
+									<br />
+									Алгоритмы и методы решения японских кроссвордов:
+									<li><a href="http://www.nonograms.ru/methods" target="_blank">Методы решения японских кроссвордов</a></li>
+									<li><a href="http://nono.michurin.net/how-to-solve.html" target="_blank">Методы решения японских кроссвордов</a></li>
+									<li><a href="http://misht.ru/tehnika-resheniya-yaponskih-krossvordov/" target="_blank">Дополнительные методы решения японских кроссвордов</a></li>
+									<li><a href="http://misht.ru/tehnika-resheniya-yaponskih-krossvordov/" target="_blank">Алгоритм решения японских кроссвордов компьютерным подбором</a></li>
+									<li><a href="https://habrahabr.ru/post/192752/" target="_blank">Решение японских кроссвордов одним запросом SQL</a></li>
+									<li><b><a href="https://en.wikipedia.org/wiki/Nonogram#Solution_techniques" target="_blank">Wikipedia. Nonogram solution techniques</a></b></li>
+									<li><a href="https://github.com/SMedgaus/Nonograms" target="_blank">Github. SMedgaus - Nonograms</a></li>
+								</ol>
 							</div>
 						</div>
 					</div>
@@ -235,8 +314,11 @@
 					<ul class="nav nav-pills flex-column smooth-scroll" data-allow-hashes="true">
 						<li class="nav-item"><a class="nav-link active" href="#motivation">Мотивация выбора темы</a></li>
 						<li class="nav-item"><a class="nav-link" href="#program-model">Проектирование программной модели</a></li>
-						<li class="nav-item"><a class="nav-link" href="#simple-filling">Простое заполнение</a></li>
-						<li class="nav-item"><a class="nav-link" href="#border-intersection">Наложение крайних позиций</a></li>
+						<li class="nav-item"><a class="nav-link" href="#border-intersection">Метод "Пересечение крайних границ"</a></li>
+						<li class="nav-item"><a class="nav-link" href="#jumping-from-walls">Метод "Отталкивание от стен"</a></li>
+						<li class="nav-item"><a class="nav-link" href="#inaccessibility">Метод "Недосягаемость"</a></li>
+						<li class="nav-item"><a class="nav-link" href="#small-empty-gaps">Метод "Не помещается"</a></li>
+						<li class="nav-item"><a class="nav-link" href="#program-working-example">Пример работы программы</a></li>
 						<li class="nav-item"><a class="nav-link" href="#my-nonograms">Мои работы</a></li>
 						<li class="nav-item"><a class="nav-link" href="#links">Ссылки</a></li>
 					</ul>
@@ -326,9 +408,6 @@
 	<script type="text/javascript" src="../js/mdb.min.js"></script>
 
 	<script type="text/javascript" src="../js/scrolling-script.js"></script>
-
-	<script type="text/javascript" src="../js/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
 
 	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
 
