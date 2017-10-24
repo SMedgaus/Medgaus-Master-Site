@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>Библиотека &ndash; Медгаус Сергей Владимирович &ndash; Архитектура и функционирование программных агентов в имитационной модели трудоустройства выпускников вуза многоагентного типа</title>
+	<title>Медгаус С.В., Чернышова А.В. &ndash; Обзор существующих обфускаторов и их алгоритмов</title>
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="../../css/font_awesome.min.css">
 	<!-- Bootstrap core CSS -->
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-	<div class="mr-5 pr-1">
+	<div class="mr-5 pr-5">
 		<!--Navbar-->
 		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
 			<!-- Collapse button -->
@@ -69,14 +69,13 @@
 
 		<div class="mb-1 mt-5 pt-3">
 			<div class="row">
+				<!--Back arrow-->
 				<div class="col-1">
-					<!--Back arrow-->
 					<div class="sticky" style="position: fixed; top: 60px; left: 20px; font-size: 4rem;">
 						<a href="../library_ru.html" target="_self">
 							<img src="../../images/arrow-back.png" alt="" class="z-depth-1 hoverable rounded-circle">
 						</a>
 					</div>
-
 				</div>
 
 				<div class="col-11">
@@ -87,15 +86,21 @@
 							<p class="text-left">
 								УДК 004.056.5
 							</p>
-							<p class="text-center">
-								С.В. Медгаус (4 курс, каф. ПИ), А.В. Чернышова, ст. преподаватель
-							</p>
 							<p class="text-center h4"><b>
 								Обзор существующих обфускаторов и их алгоритмов
 							</b></p>
-							<p><i>
-								В тексте данной статьи описан процесс обфускации и существующие обфускаторы для языка JavaScript. Также описаны возможные преобразования исходного кода для запутывания кода и для усложнения возможности реверс-инжиниринга. Исходя из анализа существующих обфускаторов, была предложена разработка обфускатора языка JavaScript с открытым кодом, реализующая сложные преобразования исходного кода.
-							</i></p>
+							<p>
+								<b>Авторы:</b> Медгаус С.В., Чернышова А.В.
+							</p>
+							<p>
+								<b>Источник:</b> Компьютерная и программная инженерия. Сборник материалов международной научнотехнической конференции студентов, аспирантов и молодых учёных 15-16 декабря 2015 года . &ndash; Донецк, ДонНТУ &ndash; 2015. с. 117 &ndash; 119. [<a href="http://cs.conf.donntu.org/docs/sbornik2015.pdf" target="_blank">ссылка на сборник</a>]
+							</p>
+							<p>
+								<b>Аннотация:</b> 
+								<i>
+									В тексте данной статьи описан процесс обфускации и существующие обфускаторы для языка JavaScript. Также описаны возможные преобразования исходного кода для запутывания кода и для усложнения возможности реверс-инжиниринга. Исходя из анализа существующих обфускаторов, была предложена разработка обфускатора языка JavaScript с открытым кодом, реализующая сложные преобразования исходного кода.
+								</i>
+							</p>
 							<p>
 								На сегодняшний день проблема сохранения прав на владение интеллектуальной собственностью стоит очень остро. В то время, как настольные приложения могут обеспечить себя различными средствами лицензирования и защиты, веб-приложения не могут защитить свой код, расположенный на стороне клиента от просмотра и изучения.
 							</p>
@@ -115,7 +120,7 @@
 								На данный момент существуют 3 уровня обфускации. Первый и самый низкий уровень – обфускация машинных команд. Этот уровень обфускации наименее изучен, и поэтому наименее распространён.
 							</p>
 							<p>
-								Следующий уровень – это уровень «байт-кода», используемый для таких языков как Java или C#, в которых исходный код программы сначала преобразуется в байт-код, а уже потом преобразуется в машинный код. Этот уровень обфускации достаточно распространён.
+								Следующий уровень – это уровень <q>байт-кода</q>, используемый для таких языков как Java или C#, в которых исходный код программы сначала преобразуется в байт-код, а уже потом преобразуется в машинный код. Этот уровень обфускации достаточно распространён.
 							</p>
 							<p>
 								И последний, 3 уровень обфускации – это запутывание исходного кода на самом верхнем уровне. Этот уровень обфускации применим для скриптовых языков.
@@ -176,7 +181,7 @@
 							</p>
 							<div class="row justify-content-center">
 								<figure class="figure">
-									<img src="use-case-diagram.png" class="figure-img img-fluid" alt="UML диаграмма прецедентов">
+									<img src="../obfuscating-images/use-case-diagram.png" class="figure-img img-fluid" alt="UML диаграмма прецедентов">
 									<figcaption class="figure-caption text-center">Рисунок 1 &ndash; UML диаграмма прецедентов</figcaption>
 								</figure>
 							</div>
@@ -190,9 +195,9 @@
 								Литература
 							</b></p>
 							<ol>
-								<li>Википедия. Обфускация [электронный ресурс]. – Режим доступа: <a href="https://ru.wikipedia.org/wiki/Обфускация" target="_blank">https://ru.wikipedia.org/wiki/Обфускация</a></li>
-								<li>LynX. Обфускация и защита программных продуктов // CITForum.  [электронный ресурс]. – Режим доступа: <a href="http://citforum.ru/security/articles/obfus/" target="_blank">http://citforum.ru/security/articles/obfus/</a></li>
-								<li>JavaScriptObfuscator. Canada [электронный ресурс]. – Режим доступа: <a href="https://www.javascriptobfuscator.com/" target="_blank">https://www.javascriptobfuscator.com/</a></li>
+								<li>Википедия. Обфускация [электронный ресурс]. &ndash; Режим доступа: <a href="https://ru.wikipedia.org/wiki/Обфускация" target="_blank">https://ru.wikipedia.org/wiki/Обфускация</a></li>
+								<li>LynX. Обфускация и защита программных продуктов // CITForum.  [электронный ресурс]. &ndash; Режим доступа: <a href="http://citforum.ru/security/articles/obfus/" target="_blank">http://citforum.ru/security/articles/obfus/</a></li>
+								<li>JavaScriptObfuscator. Canada [электронный ресурс]. &ndash; Режим доступа: <a href="https://www.javascriptobfuscator.com/" target="_blank">https://www.javascriptobfuscator.com/</a></li>
 							</ol>
 						</div>
 					</div>
