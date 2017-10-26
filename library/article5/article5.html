@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Медгаус С.В., Губенко Н.Е. &ndash; Сравнительный анализ методов лингвистической стеганографии</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="../../css/font_awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="../../css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="../../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="mr-5 pr-5">
+		<!--Navbar-->
+		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
+			<!-- Collapse button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="../../index.html"><i class="fa fa-book mr-1"></i>Резюме</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../bio/bio_ru.html"><i class="fa fa-user mr-1"></i>Биография</a>
+					</li>
+					<!-- Dropdown -->
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-graduation-cap mr-1"></i>Тематический раздел<span class="sr-only">(current)</span>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="../../abstract/abstract_ru.html"><i class="fa fa-file-text mr-2"></i>Реферат</a>
+							<a class="dropdown-item active" href="../../library/library_ru.html"><i class="fa fa-font mr-2"></i>Библиотека</a>
+							<a class="dropdown-item" href="../../links/links_ru.html"><i class="fa fa-link mr-2"></i>Ссылки</a>
+							<a class="dropdown-item" href="../../report/report_ru.html"><i class="fa fa-binoculars mr-2"></i>Отчёт о поиске</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../individual/ind_ru.html">
+							<i class="fa fa-coffee mr-1"></i>Индивидуальный раздел
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://donntu.ru" target="_blank">
+							<i class="fa fa-university mr-1"></i>ДонНТУ
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://masters.donntu.ru" target="_blank">
+							<i class="fa fa-users mr-1"></i>Портал магистров
+						</a>
+					</li>
+				</ul>
+				<!-- Links -->
+			</div>
+			<!-- Collapsible content -->
+		</nav>
+		<!--/.Navbar-->
+
+		<div class="mb-1 mt-5 pt-3">
+			<div class="row">
+				<div class="col-1">
+					<!--Back arrow-->
+					<div class="sticky" style="position: fixed; top: 60px; left: 20px; font-size: 4rem;">
+						<a href="../library_ru.html" target="_self">
+							<img src="../../images/arrow-back.png" alt="" class="z-depth-1 hoverable rounded-circle">
+						</a>
+					</div>
+
+				</div>
+
+				<div class="col-11">
+					<!--Card-->
+					<div class="card">
+						<!--Card content-->
+						<div class="card-body text-justify">
+							<p class="text-left">
+								УДК 003.26
+							</p>
+							<p class="text-center h4"><b>
+								Сравнительный анализ методов лингвистической стеганографии
+							</b></p>
+							<p>
+								<b>Авторы:</b> Медгаус С.В., Губенко Н.Е.
+							</p>
+							<p>
+								<b>Источник:</b> Программная инженерия: методы и технологии разработки информационно-вычислительных систем (ПИИВС-2016): сборник научных трудов I научно-практической конференции (студенческая секция). 16-17 ноября 2016 г. – Донецк, ГОУ ВПО «Донецкий национальный технический университет», 2016. с. 266 &ndash; 269. [<a href="http://pi.conf.donntu.org/сборники/ПИИВС-2016%20сборник%20докладов%20студ%20секции.pdf" target="_blank">ссылка на сборник</a>]
+							</p>
+							<p>
+								<b>Аннотация: </b>
+								<i>
+									В тексте данной статьи анализируются существующие методы лингвистической стеганографии и делаются выводы об эффективности каждого из методов. Предлагается выбор наиболее эффективных стеганографических методов.
+								</i>
+								<br>
+
+								<b>Ключевые слова: </b>
+								<i>
+									стеганография, лингвистическая стеганография, скрытая передача, шифрование.
+								</i>
+							</p>
+							<h4>Введение</h4>
+							<p>
+								На протяжении всей истории человечества возникала необходимость в сокрытии передаваемой информации в тайне от окружающих. Эта информация могла быть стратегически важной и для её защиты применялись различные методы стеганографии и шифрования.							
+							</p>
+							<p>
+								Шифрование скрывало содержание сообщения, то есть потенциальный враг мог перехватить сообщение и увидеть, что оно зашифровано, но для расшифровки необходимо было знание метода шифрования и ключа. Стеганография же скрывает сам факт передачи сообщения (от лат. стеганос &ndash; скрытый, графо &ndash; писать) [<a href="http://citforum.ru/security/articles/min_bit" target="_blank">1</a>]. Нужное сообщение встраивается каким-либо образом в контейнер (текст, аудио или видеофайл) таким образом, чтобы люди, незнающие, что передаваемое сообщение содержит что-то секретное, не заподозрили факт передачи.
+							</p>
+							<p>
+								Для повышения эффективности сокрытия данных при скрытой передаче принято использовать комбинацию криптографии и стеганографии, то есть сначала зашифровать сообщение, а потом встроить его в контейнер. Стегосистема – это совокупность средств и методов, которые используются для формирования скрытого канала передачи информации. Сообщение – это любая информация, подлежащая скрытой передаче. В качестве сообщения может использоваться любой вид информации: текст, изображение, аудио сигнал. Скрытое сообщение – это сообщение, встроенное в контейнер. Контейнер – это информация в любой форме, предназначенная для скрытия сообщения. Выбор вида контейнера оказывает существенное влияние на надёжность стегосистемы и возможность обнаружения факта передачи скрытого сообщения [<a href="http://5fan.ru/wievjob.php?id=36765" target="_blank">2</a>]. На рис. 1 [<a href="https://goo.gl/zdr1hF" target="_blank">3</a>] представлена известная структурная схема стегосистемы.
+							</p>
+							<div class="row justify-content-center">
+								<figure class="figure">
+									<img src="structure-scheme.png" class="figure-img img-fluid" alt="Структурная схема стегосистемы">
+									<figcaption class="figure-caption text-center">Рисунок 1 &ndash; Структурная схема стегосистемы</figcaption>
+								</figure>
+							</div>
+							<p>
+								Целью данной работы является проведение сравнительного анализа существующих методов лингвистической стеганографии, а также заключение о лучшем методе или их комбинации.
+							</p>
+							<h4>1 Анализ методов стеганографии</h4>
+							<p>
+								Существуют несколько видов стеганографии: классическая, компьютерная и лингвистическая.
+							</p>
+							<p>
+								Классическая стеганография представляет методы сокрытия информации, которые использовались древними людьми для сокрытия факта передачи сообщения: симпатические чернила, акростихи и решётки, которые кладут на текст сообщения.
+							</p>
+							<p>
+								Компьютерная стеганография получила своё развитие при появлении и использовании компьютеров для коммуникации людей. Этот тип стеганографии включает методы, которые встраивают данные в различные аудио-, видеофайлы и изображения таким образом, чтобы сам контейнер сильно не изменился.
+							</p>
+							<p>
+								Лингвистическая стеганография специализируется на встраивании сообщений в текстовые контейнеры. В тексте данной статьи рассматриваются, анализируются и сравниваются такие методы лингвистической стеганографии: метод произвольного интервала, метод выровненного текста, метод изменения пунктуации, метод изменения стиля и структуры текста или перефразирование, графематический метод сокрытия и жаргон [4].
+							</p>
+							<h4>1.1 Метод произвольного интервала</h4>
+							<p>
+								Данный метод заключается в добавление некоторого количества пропусков (пробелов, знаков табуляции) между словами или предложениями. [4] Алгоритм метода приведён на рис. 2. Анализ алгоритма показывает, что реализация этого метода достаточно проста, но и обнаружение факта сокрытия тоже несложное.
+							</p>
+							<div class="row justify-content-center">
+								<figure class="figure">
+									<img src="free-interval-algorithm.png" class="figure-img img-fluid" alt="Алгоритм метода произвольного интервала">
+									<figcaption class="figure-caption text-center">Рисунок 2 &ndash; Алгоритм метода произвольного интервала</figcaption>
+								</figure>
+							</div>
+							<h4>1.2 Метод выровненного текста</h4>
+							<p>
+								Этот метод заключается в добавлении чётного или нечётного количества пробелов между слов в строках для получения выровненного текста, где чётное количество, например, кодируется 0, нечётное – 1. Реализация данного метода проста, но этот метод неудобно применять, так как много программ могут потерять количество пробелов во время передачи или сохранения файла. Более того, существуют текстовые редакторы, которые удаляют лишние пробелы в тексте, что тоже может плохо повлиять на правильную передачу сообщений [4].
+							</p>
+							<h4>1.3 Метод изменённой пунктуации</h4>
+							<p>
+								Данный метод заключается в замене некоторых знаков пунктуации на их словесные аналоги. Например, в перечислениях можно писать перечисляемые слова через запятую, а можно использовать союз <q>и</q>. Ещё можно заменять <q>:</q> на <q>такие как<q> и так далее. Такой способ тоже можно использовать для кодирования бинарных чисел [4].
+								</p>
+								<h4>1.4 Перефразирование</h4>
+								<p>
+									Этот метод частично изменяет текст, меняя местами главное и придаточное предложение. Например, предложение <q>Я выходил из дома, когда зазвонил телефон</q> заменяется на <q>Когда зазвонил телефон, я выходил из дома</q>. Смысловое наполнение предложение сильно не меняется, однако таким методом можно, как и в методах, указанных раннее, кодировать бинарные числа для передачи сообщений [4].
+								</p>
+								<h4>1.5 Графематический метод</h4>
+								<p>
+									Данный метод заключается в замене букв из одного языка на буквы из другого языка или символы. Например, о(рус.) &ndash; o(англ.), а(рус.) &ndash; a(англ.). В компьютерном представлении это будут различные символы, а на экране отображение текста не поменяется. Можно кодировать бинарные числа, если принимать, что русская буква &ndash; 0, а английская буква &ndash; 1. В данном методе можно использовать несколько языков для получения большего количества подстановок и соответственно большей возможности для кодирования. Этот метод достаточно хорош, однако он применим только для передачи электронных сообщений [4]. Алгоритм данного метода представлен на рис. 3.
+								</p>
+								<div class="row justify-content-center">
+									<figure class="figure">
+										<img src="grafematic-algorithm.png" class="figure-img img-fluid" alt="Алгоритм графематического метода">
+										<figcaption class="figure-caption text-center">Рисунок 3 &ndash; Алгоритм графематического метода</figcaption>
+									</figure>
+								</div>
+								<h4>1.6 Жаргон</h4>
+								<p>
+									Этот метод может дать неоднозначные результаты при его применении, так как для его реализации нужен словарь жаргонизмов, на которые менять обычные слова. Однако этот метод легко узнаваем и слова из жаргона будет видно. Пример слов-жаргонизмов: <q>капуста</q> - деньги. Такой вид жаргона легко узнать, но, если заменять слова обычными синонимами, тогда факт передачи сообщения будет тяжелее обнаружить. Для такого сокрытия понадобится заранее условленный словарь синонимов [5].
+								</p>
+								<h4>1.7 Сравнение методов</h4>
+								<p>
+									После анализа приведённых выше методов лингвистической стеганографии, была составлена сравнительная таблица, учитывающая следующие характеристики: сложность реализации, сложность обнаружения, сложность внедрения и извлечения сообщения из контейнера. Каждый метод оценивается баллами от 1 до 3 в зависимости от веса соответствующего критерия в нём (см. табл. 1).
+								</p>
+
+								<p class="text-center">
+									Таблица 1. Сравнительная характеристика методов лингвостеганографии
+								</p>
+								<table class="table table-bordered">
+									<thead class="blue-grey lighten-5">
+										<tr>
+											<th class="h4 text-center align-middle" rowspan="2">Критерии</th>
+											<th class="h4 text-center align-middle" colspan="6">Методы лингвистической стеганографии</th>
+										</tr>
+										<tr>
+											<th class="h6 text-center align-middle">Произвольный интервал</th>
+											<th class="h6 text-center align-middle">Выровненный текст</th>
+											<th class="h6 text-center align-middle">Изменённая пунктуация</th>
+											<th class="h6 text-center align-middle">Перефразирование</th>
+											<th class="h6 text-center align-middle">Графематика</th>
+											<th class="h6 text-center align-middle">Жаргон</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<th class="text-center">Сложность реализации</th>
+											<th class="text-center">1</th>
+											<th class="text-center">1</th>
+											<th class="text-center">2</th>
+											<th class="text-center">3</th>
+											<th class="text-center">1</th>
+											<th class="text-center">2</th>
+										</tr>
+										<tr>
+											<th class="text-center">Сложность внедрения и извлечения сообщения</th>
+											<th class="text-center">1</th>
+											<th class="text-center">1</th>
+											<th class="text-center">2</th>
+											<th class="text-center">3</th>
+											<th class="text-center">2</th>
+											<th class="text-center">3</th>
+										</tr>
+										<tr>
+											<th class="text-center">Сложность обнаружения</th>
+											<th class="text-center">1</th>
+											<th class="text-center">1</th>
+											<th class="text-center">2</th>
+											<th class="text-center">3</th>
+											<th class="text-center">3</th>
+											<th class="text-center">3</th>
+										</tr>
+									</tbody>
+								</table>
+
+								<h4>Выводы</h4>
+								<p>
+									При проведении исследования были проанализированы различные методы лингвистической стеганографии, а также была построена сравнительная таблица вышеуказанных методов. Они сравнивались по сложности реализации, сложности внедрения и извлечения сообщений и сложности обнаружения. Как выяснилось, методы, которые труднее в реализации и во внедрении и извлечении сообщений, лучше защищают сообщение от обнаружения факта передачи. Можно сказать, что эффективнее всего себя покажет комбинация всех методов лингвистической стеганографии.
+								</p>
+
+
+
+								<p class="text-center h4"><b>
+									Литература
+								</b></p>
+								<ol>
+									<li>Citforum. Стеганография [электронный ресурс]. &ndash; Режим доступа: <a href="http://citforum.ru/security/articles/min_bit" target="_blank">http://citforum.ru/security/articles/min_bit</a></li>
+									<li>Исследование метода компьютерной стеганографии для защиты информации  [электронный ресурс]. &ndash; Режим доступа: <a href="http://5fan.ru/wievjob.php?id=36765" target="_blank">http://5fan.ru/wievjob.php?id=36765</a></li>
+									<li>Структурная схема стегосистемы  [электронный ресурс]. &ndash; Режим доступа: <a href="https://goo.gl/zdr1hF" target="_blank">https://goo.gl/zdr1hF</a></li>
+									<li>Лингвистическая стеганография. ИУСМКМ &ndash; 2011: Вестник московского государственного лингвистического университета. Серия: Гуманитарные науки: &ndash; Москва: МГЛУ, 2016. &ndash; С. 66 &ndash; 73.</li>
+									<li>Бабина, О.И. Лингвистическая стеганография: современные подходы. Часть 1 / О.И. Бабина // Вестник ЮУрГУ. Серия «Лингвистика». &ndash; 2015. &ndash; Т. 12, № 3. &ndash; С. 27 &ndash; 33.</li>
+								</ol>
+							</div>
+						</div>
+						<!--/.Card-->
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<footer class="page-footer center-on-small-only stylish-color-dark">
+			<!--Social buttons-->
+			<div class="social-section text-center container-fluid">
+				<div class="row">
+					<div class="col">
+						<h1>Контакты</h1>
+					</div>
+					<!-- Social -->
+					<div class="col-6">
+						<ul>
+							<li>
+								<a href="https://github.com/smedgaus" target="_blank">
+									<button type="button" class="btn btn-elegant text-capitalize">
+										<i class="fa fa-git"></i>
+									</button>
+								</a>
+							</li>
+							<li>
+								<a href="https://vk.com/smedgaus" target="_blank">
+									<button type="button" class="btn unique-color text-capitalize">
+										<i class="fa fa-vk"></i>
+									</button>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.linkedin.com/in/sergey-medgaus-70b22a78/"  target="_blank">
+									<button type="button" class="btn special-color text-capitalize">
+										<i class="fa fa-linkedin"></i>
+									</button>
+								</a>
+							</li>
+							<li>
+								<a href="https://www.facebook.com/smedgaus"  target="_blank">
+									<button type="button" class="btn indigo darken-3 text-capitalize">
+										<i class="fa fa-facebook"></i>
+									</button>
+								</a>
+							</li>
+							<li>
+								<a href="https://play.google.com/store/apps/developer?id=MedgausApps"  target="_blank">
+									<button type="button" class="btn green darken-2 text-capitalize">
+										<i class="fa fa-android"></i>
+									</button>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col text-left">
+						<i class="fa fa-skype mr-1"></i> sergey.medgaus <br/>
+						<a href="mailto:medgaus-sergey@yandex.com">
+							<i class="fa fa-envelope mr-1"></i> medgaus-sergey@yandex.com
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<!--/.Social buttons-->
+
+			<!--Copyright-->
+			<div class="footer-copyright">
+				<div class="row">
+					<div class="col clearfix">
+						<span class="float-left ml-4">Copyright 2017 <i class="fa fa-copyright"></i> Sergey Medgaus</span>
+					</div>
+				</div>
+
+			</div>
+			<!--/.Copyright-->
+		</footer>
+
+		<!-- SCRIPTS -->
+		<!-- JQuery -->
+		<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+		<!-- Bootstrap tooltips -->
+		<script type="text/javascript" src="../../js/popper.min.js"></script>
+		<!-- Bootstrap core JavaScript -->
+		<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+		<!-- MDB core JavaScript -->
+		<script type="text/javascript" src="../../js/mdb.min.js"></script>
+
+		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+	</body>
+	</html>
