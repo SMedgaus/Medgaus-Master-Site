@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Медгаус С.В., Федяев О.И. &ndash; Исследование программных моделей нейронных сетей прямого распространения</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="../../css/font_awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="../../css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="../../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="mr-5 pr-5 ml-5 pl-5">
+		<!--Navbar-->
+		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
+			<!-- Collapse button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="../../index.html"><i class="fa fa-book mr-1"></i>Резюме</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../bio/bio_ru.html"><i class="fa fa-user mr-1"></i>Биография</a>
+					</li>
+					<!-- Dropdown -->
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-graduation-cap mr-1"></i>Тематический раздел<span class="sr-only">(current)</span>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="../../abstract/abstract_ru.html"><i class="fa fa-file-text mr-2"></i>Реферат</a>
+							<a class="dropdown-item active" href="../../library/library_ru.html"><i class="fa fa-font mr-2"></i>Библиотека</a>
+							<a class="dropdown-item" href="../../links/links_ru.html"><i class="fa fa-link mr-2"></i>Ссылки</a>
+							<a class="dropdown-item" href="../../report/report_ru.html"><i class="fa fa-binoculars mr-2"></i>Отчёт о поиске</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../individual/ind_ru.html">
+							<i class="fa fa-coffee mr-1"></i>Индивидуальный раздел
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://donntu.ru" target="_blank">
+							<i class="fa fa-university mr-1"></i>ДонНТУ
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://masters.donntu.ru" target="_blank">
+							<i class="fa fa-users mr-1"></i>Портал магистров
+						</a>
+					</li>
+				</ul>
+				<!-- Links -->
+			</div>
+			<!-- Collapsible content -->
+		</nav>
+		<!--/.Navbar-->
+
+		<div class="mb-1 mt-5 pt-3">
+			<!--Back arrow-->
+			<div class="sticky" style="position: fixed; top: 60px; left: 20px; font-size: 4rem;">
+				<a href="../library_ru.html#article6" target="_self">
+					<img src="../../images/arrow-back.png" alt="" class="z-depth-1 hoverable rounded-circle">
+				</a>
+			</div>
+			
+			<!--Card-->
+			<div class="card">
+				<!--Card content-->
+				<div class="card-body text-justify">
+					<p class="text-left">
+						УДК 004.942
+					</p>
+					<p class="text-center h4"><b>
+						Исследование программных моделей нейронных сетей прямого распространения
+					</b></p>
+					<p>
+						<b>Авторы:</b> Медгаус С.В., Федяев О.И.
+					</p>
+					<p>
+						<b>Источник:</b> Информатика, управляющие системы, математическое и компьютерное моделирование в рамках III форума «Инновационные перспективы Донбасса» (ИУСМКМ &ndash; 2017): VIII Международная научно-техническая конференция, 25 мая 2017, г. Донецк: / Донец. национал. техн. ун-т; редкол. Ю.К. Орлов и др. &ndash; Донецк: ДонНТУ, 2017. &ndash; 802 с. с. 181 &ndash; 187. [<a href="http://iuskm.donntu.org/electronic/iusk2017.pdf" target="_blank">ссылка на сборник</a>]
+					</p>
+					<p>
+						<b>Аннотация: </b>
+						<i>
+							В данной статье рассмотрены наиболее распространённые стратегий обучения нейронных сетей прямого распространения, а также приведены программные модели нейросетей, для которых применены эти алгоритмы и приведён анализ их эффективности.
+						</i>
+					</p>
+					<h4>Введение</h4>
+					<p>
+						Многие задачи, которые решаются в настоящее время с помощью компьютерных систем, с точки зрения формализма разработки алгоритма решения, относятся к классу трудно формализуемым (а иногда и к неформализуемым) задачам. Для них невозможно чётко определить логику функционирования программы для решения поставленной задачи. К таким задачам относятся задачи распознавания и классификации образов, сжатия данных, идентификации и управления сложными объектами, аппроксимации и интерполяции, прогнозирования динамики процессов и т. д. [<a href="https://neuralnet.info/chapter/введение/" target="_blank">1</a>]. Для решения таких задач стали успешно применять искусственные нейронные сети благодаря их способности к обучению и к обобщению полученных знаний. В настоящее время разработано много типов нейронных сетей для указанного класса прикладных задач.
+					</p>
+					<p>
+						Среди множества существующих типов сетей в качестве важнейших можно выделить нейронные сети прямого распространения (с прямой связью). Согласно теоретическим результатам нейронные сети с прямой связью и с сигмоидальными функциями активации являются универсальным средством для приближения (аппроксимации) произвольных функций. Однако нет никакого правила, позволяющего найти оптимальную топологию сети для решаемой задачи. Таким образом, задача построения адекватной нейронной сети является нетривиальной. Вопросы о том, сколько нужно взять скрытых слоёв, сколько нейронов в каждом из них, какие связи, в имеющейся литературе, как правило, трактуются бездоказательно и предлагаются решать путём простого перебора различных архитектур.
+					</p>
+					<p>
+						Другая проблема связана с правильной организацией процесса обучения нейронной сети [<a href="http://www.aiportal.ru/articles/neural-networks/perceptron-learning.html" target="_blank">2</a>]. Насколько качественно он будет организован, зависит способность сети решать поставленные перед ней задачи во время штатного функционирования. Ключевым вопросом в обучении является выбор алгоритма настройки нейросети. Все подобные алгоритмы основаны на методах оптимизации нелинейной многомерной функции ошибки, поэтому длительность процесса обучения и его качество зависит не только от применяемого метода оптимизации, но и от других факторов (особенностей структуры нейросети, обучающего множества). Разработано уже более сотни разных обучающих алгоритмов, отличающихся друг от друга стратегией оптимизации и критерием ошибок. Для задачи многомерной оптимизации предложен большой спектр методов, начиная от градиентного метода наискорейшего спуска и заканчивая методом Монте-Карло и генетическими алгоритмами. 
+					</p>
+					<p>
+						Описанные проблемы приводят к тому, что при практической работе с нейронными сетями прямого распространения приходится экспериментировать с большим числом различных сетей, порой обучая каждую из них по нескольку раз и сравнивая полученные результаты. Главным показателем качества результата является здесь контрольная ошибка. При этом, в соответствии с общесистемным принципом, из двух сетей с приблизительно равными ошибками контроля имеет смысл выбрать ту, которая проще.
+					</p>
+					<p>
+						Несмотря на значительное количество уже известных практических приложений нейросетей прямого распространения, возможности их дальнейшего использования для обработки сигналов не изучены окончательно. Поэтому цель данной научной работы состоит в разработке программных моделей нейросетей прямого распространения и исследовании их ключевых свойств (представления и обучения) для разработки на их основе качественных программных агентов с нейросетевой архитектурой. Для этого рассмотрены две типовые структуры сетей прямого распространения и алгоритмы их обучения по стратегии <q>обучение с учителем</q>.
+					</p>
+					<h4>1 Однослойная сеть прямого распространения (однослойный персептрон)</h4>
+					<p>
+						Типовая структура однослойного персептрона, ориентированная на решение задачи распознавания графических символов показана на рис. 1.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="perceptron-model.png" class="figure-img img-fluid mx-auto d-block" alt="Модель персептрона">
+							<figcaption class="figure-caption text-center">Рисунок 1 &ndash; Модель персептрона</figcaption>
+						</figure>
+					</div>
+					<p>
+						Для обучения нейросети применялась стратегии контролируемого обучения: <q>учитель</q> подаёт на вход сети оцифрованный образ буквы, а на выход сообщает желаемое значение результата распознавания (буква гласная или согласная). Такой набор контрольных примеров был сгруппирован в обучающее множество {(X,Y)}. В ходе обучения по алгоритму дельта-правило вычисляется ошибка δ (дельта), как разность между требуемым сигналом и фактическим выходом. 
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="formula1.png" class="figure-img img-fluid mx-auto d-block" alt="формула №1">
+						</figure>
+					</div>
+					<p>
+						Полученная ошибка служит основой для корректировки весов нейрона. После получения значения ошибки для каждого из нейронов (если их несколько в слое) вычисляется значение новых весов на основании этой ошибки и параметра скорости обучения (2).
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="formula2.png" class="figure-img img-fluid mx-auto d-block" alt="формула №2">
+						</figure>
+					</div>
+					<p>
+						где	<br>i &ndash; номер текущей итерации (эпохи) обучения персептрона;<br>j &ndash; номер синаптической связи;<br>η &ndash; коэффициент скорости обучения, позволяет управлять средней величиной изменения весов (0 < η <1);<br>x<sub>j</sub> &ndash; величина входа соответствующая a<sub>j</sub> синаптическому весу.
+					</p>
+					<p>
+						Сходимость алгоритма (1 &ndash; 2) исследовал Ф. Розенблатт [<a href="https://neuralnet.info/chapter/основы-инс/" target="_blank">3</a>], а также другие авторы в более поздних публикациях. Данный алгоритм обучения хороший, но он применим только для однослойных нейросетей, в которых ошибка непосредственно влияет на единственные веса, ведущие ко входам в нейронной сети [<a href="http://www.aiportal.ru/articles/neural-networks/perceptron-learning.html" target="_blank">2</a>].
+					</p>
+					<p>
+						Для исследования данной нейросети была разработана её программная модель, которая реализует один нейрон с одним выходом и многими входами с соответствующими весовыми коэффициентами [<a href="https://neuralnet.info/chapter/основы-инс/" target="_blank">3</a>] (см. рис. 1). В обучающее множество включены изображения первых 10 букв с разным начертанием и задан признак гласности каждой из букв. После этого НС была обучена по рассмотренному алгоритму на данных примерах с приемлемым уровнем точности (до 100% распознавания) (см. рис. 2).
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="reducing-error.png" class="figure-img img-fluid mx-auto d-block" alt="Уменьшение ошибки распознавания в ходе обучения персептрона">
+							<figcaption class="figure-caption text-center">Рисунок 2 &ndash; Уменьшение ошибки распознавания в ходе обучения персептрона</figcaption>
+						</figure>
+					</div>
+					<p>
+						При тестировании программной модели нейросети на её вход подавались новые образы букв, незнакомые системе, и система выдавала в 80% правильные результаты распознавания (см. рис. 3 - 4).
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="checking-vowel-a.png" class="figure-img img-fluid mx-auto d-block" alt="Работа системы по проверке гласности. Буква А">
+							<figcaption class="figure-caption text-center">Рисунок 3 &ndash; Работа системы по проверке гласности. Буква А</figcaption>
+						</figure>
+					</div>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="checking-vowel-b.png" class="figure-img img-fluid mx-auto d-block" alt="Работа системы по проверке гласности. Буква В">
+							<figcaption class="figure-caption text-center">Рисунок 4 &ndash; Работа системы по проверке гласности. Буква В</figcaption>
+						</figure>
+					</div>
+					<p>
+						Также разработанная программная модель позволяет <q>дообучать</q> нейросеть с новыми образами, для этого пользователю необходимо нарисовать новый образ и запустить проверку. Если система выдаёт правильный результат, то <q>одобрить</q> её вычисления. Иначе нужно <q>пожурить</q> её, чтобы в следующий раз при обучении она не делала неправильных вычислений.
+					</p>
+					<h4>2 Многослойная сеть прямого распространения (многослойный персептрон)</h4>
+					<p>
+						Для обучения многослойных нейронных сетей был программно реализован эффективный алгоритм обратного распространения ошибки (Backpropagation), представляющий собой развитие обобщённого дельта-правила [<a href="http://www.gotai.net/documents/doc-nn-009-06.aspx" target="_blank">4</a>, 5]. Этот алгоритм считается наиболее известным и чаще всего применяемым в искусственных нейронных сетях прямого распространения. Эта стратегия обучения применима как для однослойных, так и для многослойных НС. Ошибка из выходного слоя НС последовательно распределяется и передаётся внутренним скрытым слоям, в итоге достигая первого скрытого слоя [<a href="http://www.gotai.net/documents/doc-nn-009-06.aspx" target="_blank">4</a>]. Основные действия при обратном распространении ошибки представлены на рис. 5 [<a href="http://masters.donntu.org/2006/kita/kiryan/library/art06.htm" target="_blank">5</a>].
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="back-propagation.jpg" class="figure-img img-fluid mx-auto d-block" alt="Основные действия НС при обратном распространении">
+							<figcaption class="figure-caption text-center">Рисунок 5 &ndash; Основные действия НС при обратном распространении</figcaption>
+						</figure>
+					</div>
+					<p>
+						Для исследования этого типа нейросети также была разработана программная модель. Структура многослойной нейросети показана на рис. 6. Она представляет собой трёхслойную НС, которая использует для обучения алгоритм обратного распространения ошибки. Качество данной нейросети оценивалось на решении задачи прогнозирования динамического процесса.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="multilayer-perceptron.png" class="figure-img img-fluid mx-auto d-block" alt="Структура многослойной сети">
+							<figcaption class="figure-caption text-center">Рисунок 6 &ndash; Структура многослойной сети</figcaption>
+						</figure>
+					</div>
+					<p>
+						Динамика процесса описывалась синусоидальной функцией. В эксперименте использовалась функция sin(x). Для обучения НС функция была разбита на отрезки и с помощью метода окон (Windowing) было построено обучающее множество [6]. При обучении была достигнута ошибка в 0.005%. С целью ускорения процесса обучения сети предложены многочисленные модификации алгоритма обратного распространения ошибки, связанные с использованием различных функций ошибки, процедур определения направления и величины шага.
+					</p>
+					<p>
+						На рис. 7 представлена динамика обучения нейронной сети в зависимости от количества эпох обучения.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="forecasting-result.png" class="figure-img img-fluid mx-auto d-block" alt="Результаты настройки многослойной нейронной сети на синусоиду по эпохам">
+							<figcaption class="figure-caption text-center">Рисунок 7 &ndash; Результаты настройки многослойной нейронной сети на синусоиду по эпохам</figcaption>
+						</figure>
+					</div>
+					<h4>Выводы</h4>
+					<p>
+						В ходе исследования были проанализированы различные структуры нейронных сетей и методы их обучения. Также были разработаны программные модели вышеуказанных нейросетей с целью проведения экспериментов по анализу их эффективности.
+					</p>
+					<p>
+						В результате был подтверждён тезис о способности нейросетей распознавать образы и выявлены основные достоинства и недостатки различных алгоритмов обучения нейросетей прямого распространения.
+					</p>
+
+					<p class="text-center h4"><b>
+						Литература
+					</b></p>
+					<ol>
+						<li>Искусственные нейронные сети [электронный ресурс]. &ndash; Режим доступа: <a href="https://neuralnet.info/chapter/введение/" target="_blank">https://neuralnet.info/chapter/введение/</a></li>
+						<li>Алгоритм обучения НС прямого распространения по дельта-правилу [электронный ресурс]. &ndash; Режим доступа: <a href="http://www.aiportal.ru/articles/neural-networks/perceptron-learning.html" target="_blank">http://www.aiportal.ru/articles/neural-networks/perceptron-learning.html</a></li>
+						<li>Структура персепетрона  [электронный ресурс]. &ndash; Режим доступа: <a href="https://neuralnet.info/chapter/основы-инс/" target="_blank">https://neuralnet.info/chapter/основы-инс/</a></li>
+						<li>Алгоритм обратного распространения ошибки в многослойных НС [электронный ресурс]. &ndash; Режим доступа: <a href="http://www.gotai.net/documents/doc-nn-009-06.aspx" target="_blank">http://www.gotai.net/documents/doc-nn-009-06.aspx</a></li>
+						<li>Основные действия при обратном распространении ошибки [электронный ресурс]. &ndash; Режим доступа: <a href="http://apsheronsk.bozo.ru/Neural/Lec3.files/image030.jpg" target="_blank">http://apsheronsk.bozo.ru/Neural/Lec3.files/image030.jpg</a></li>
+						<li>Метод плавающего окна [электронный ресурс]. &ndash; Режим доступа: <a href="http://masters.donntu.org/2006/kita/kiryan/library/art06.htm" target="_blank">http://masters.donntu.org/2006/kita/kiryan/library/art06.htm</a></li>
+					</ol>
+				</div>
+			</div>
+			<!--/.Card-->
+		</div>
+	</div>
+
+
+	<footer class="page-footer center-on-small-only stylish-color-dark">
+		<!--Social buttons-->
+		<div class="social-section text-center container-fluid">
+			<div class="row">
+				<div class="col">
+					<h1>Контакты</h1>
+				</div>
+				<!-- Social -->
+				<div class="col-6">
+					<ul>
+						<li>
+							<a href="https://github.com/smedgaus" target="_blank">
+								<button type="button" class="btn btn-elegant text-capitalize">
+									<i class="fa fa-git"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://vk.com/smedgaus" target="_blank">
+								<button type="button" class="btn unique-color text-capitalize">
+									<i class="fa fa-vk"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/sergey-medgaus-70b22a78/"  target="_blank">
+								<button type="button" class="btn special-color text-capitalize">
+									<i class="fa fa-linkedin"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/smedgaus"  target="_blank">
+								<button type="button" class="btn indigo darken-3 text-capitalize">
+									<i class="fa fa-facebook"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/developer?id=MedgausApps"  target="_blank">
+								<button type="button" class="btn green darken-2 text-capitalize">
+									<i class="fa fa-android"></i>
+								</button>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col text-left">
+					<i class="fa fa-skype mr-1"></i> sergey.medgaus <br/>
+					<a href="mailto:medgaus-sergey@yandex.com">
+						<i class="fa fa-envelope mr-1"></i> medgaus-sergey@yandex.com
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Social buttons-->
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="row">
+				<div class="col clearfix">
+					<span class="float-left ml-4">Copyright 2017 <i class="fa fa-copyright"></i> Sergey Medgaus</span>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Copyright-->
+	</footer>
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="../../js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="../../js/mdb.min.js"></script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>

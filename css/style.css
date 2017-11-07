@@ -53,3 +53,9 @@ body {
 	border-radius: 0;
 	font-weight: bold;
 }
+
+.bordered-image {
+	padding: 5px;
+	border-width: 2px black;
+	border-style: solid;
+}

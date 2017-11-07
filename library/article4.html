@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Медгаус С.В., Чернышова А.В. &ndash; Обфускатор программного кода языка JavaScript</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="../css/font_awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="../css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="mr-5 pr-5 ml-5 pl-5">
+		<!--Navbar-->
+		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
+			<!-- Collapse button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="../index.html"><i class="fa fa-book mr-1"></i>Резюме</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../bio/bio_ru.html"><i class="fa fa-user mr-1"></i>Биография</a>
+					</li>
+					<!-- Dropdown -->
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-graduation-cap mr-1"></i>Тематический раздел<span class="sr-only">(current)</span>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="../abstract/abstract_ru.html"><i class="fa fa-file-text mr-2"></i>Реферат</a>
+							<a class="dropdown-item active" href="../library/library_ru.html"><i class="fa fa-font mr-2"></i>Библиотека</a>
+							<a class="dropdown-item" href="../links/links_ru.html"><i class="fa fa-link mr-2"></i>Ссылки</a>
+							<a class="dropdown-item" href="../report/report_ru.html"><i class="fa fa-binoculars mr-2"></i>Отчёт о поиске</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../individual/ind_ru.html">
+							<i class="fa fa-coffee mr-1"></i>Индивидуальный раздел
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://donntu.ru" target="_blank">
+							<i class="fa fa-university mr-1"></i>ДонНТУ
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://masters.donntu.ru" target="_blank">
+							<i class="fa fa-users mr-1"></i>Портал магистров
+						</a>
+					</li>
+				</ul>
+				<!-- Links -->
+			</div>
+			<!-- Collapsible content -->
+		</nav>
+		<!--/.Navbar-->
+
+		<div class="mb-1 mt-5 pt-3">
+			<!--Back arrow-->
+			<div class="sticky" style="position: fixed; top: 60px; left: 20px; font-size: 4rem;">
+				<a href="library_ru.html#article4" target="_self">
+					<img src="../images/arrow-back.png" alt="" class="z-depth-1 hoverable rounded-circle">
+				</a>
+			</div>
+			
+			<!--Card-->
+			<div class="card">
+				<!--Card content-->
+				<div class="card-body text-justify">
+					<p class="text-left">
+						УДК 004.056.5
+					</p>
+					<p class="text-center h4"><b>
+						Обфускатор программного кода языка JavaScript
+					</b></p>
+					<p>
+						<b>Авторы:</b> Медгаус С.В., Чернышова А.В.
+					</p>
+					<p>
+						<b>Источник:</b> Информатика и кибернетика, № 4(6), &ndash; Донецк: ДонНТУ, 2016.  с. 59 &ndash; 66. [<a href="http://infcyb.donntu.org/A_6_6.pdf" target="_blank">ссылка на сборник</a>]
+					</p>
+					<p>
+						<b>Аннотация: </b>
+						<i>
+							В тексте данной статьи представлен краткий обзор существующих обфускаторов для языка JavaScript. После их анализа предложено реализовать собственный обфускатор, применяющий сложные преобразования исходного кода. В статье подробно описаны применяющиеся алгоритмы запутывания.
+						</i>
+						<br>
+
+						<b>Ключевые слова: </b>
+						<i>
+							обфускатор, Java, JavaScript, запутывание, обфускация, алгоритмы обфускации, Esprima, Nashorn.
+						</i>
+					</p>
+					<h4>Введение</h4>
+					<p>
+						На данный момент проблема сохранения прав собственности на исходный код достаточно актуальна. В отличие от настольных приложений, в которых существуют различные средства защиты и лицензирования, в web-приложениях такие способы защиты не применимы и весь исходный код скриптов доступен для просмотра любому желающему через браузер.
+					</p>
+					<p>
+						Подробный анализ существующих способов защиты web-приложений рассмотрен в [1]. Исходя из изложенного в статье  материала, можно сказать, что обфускация – это наименее ресурсоёмкий способ защиты исходного кода web-приложений. <q>Обфускация (от лат. obfuscare — затенять, затемнять; и англ. obfuscate — делать неочевидным, запутанным, сбивать с толку) или запутывание кода — приведение исходного текста или исполняемого кода программы к виду, сохраняющему его функциональность, но затрудняющему анализ и понимание алгоритмов работы. Существуют специальные программы, производящие обфускацию, так называемые обфускаторы</q> [<a href="https://ru.wikipedia.org/wiki/Обфускация" target="_blank">2</a>].
+					</p>
+					<p>
+						На текущий момент существуют различные программные продукты, которые предлагают обфускацию исходного кода, однако эффективные алгоритмы обфускации предлагают только платные продукты, бесплатные же работают на уровне минификации кода (уменьшение размера исходного кода, путём сокращения имён переменных и функций, удаление символов форматирования кода). В работе [1] были рассмотрены и проанализированы такие полнофункциональные и эффективные программные продукты как YUI Compressor [<a href="https://github.com/yui/yuicompressor" target="_blank">3</a>], Packer [<a href="http://dean.edwards.name/packer" target="_blank">4</a>], JavaScript Obfuscator [<a href="https://www.javascriptobfuscator.com/" target="_blank">5</a>] и Google Closure Compiler [<a href="https://developers.google.com/closure/compiler/" target="_blank">6</a>]. После анализа существующих обфускаторов было принято решение разработать комбинацию эффективных обфусцирующих алгоритмов.
+					</p>
+					<p>
+						Целью работы является реализация алгоритмов обфускации для языка JavaScript с последующим объединением их в комплексный алгоритм обфусцирующего преобразования и использование его при создании обфускатора.
+					</p>
+					<h4>1 Проектирование обфускатора</h4>
+					<p>
+						После анализа существующих обфускаторов для языка JavaScript, была разработана диаграмма прецедентов для проектируемого обфускатора (см. рис. 1).
+					</p>
+					<p>
+						Диаграмма прецедентов UML – это диаграмма, показывающая связи между актёрами и действиями (прецедентами), которые они могут выполнять. Эта диаграмма позволяет точно описать полную функциональность программной системы [<a href="http://www.intuit.ru/studies/courses/1007/ 229/lecture/5962" target="_blank">7</a>].
+					</p>
+					<p>
+						Как видно из рис. 1, пользователь может загружать файл с исходным кодом, сохранять обфусцированный код в файл, запускать обфускацию, а также выбирать режимы обфускации:
+						<ul>
+							<li>удаление форматирования;</li>
+							<li>преобразование условных конструкций;</li>
+							<li>логическое преобразование;</li>
+							<li>сокращение констант;</li>
+							<li>кодирование числовых констант;</li>
+							<li>кодирование строковых констант;</li>
+							<li>переименование переменных.</li>
+						</ul>
+					</p>
+					<p>
+						Все вышеперечисленные режимы обфускации применяются в заданном программой порядке, который невозможно изменить, то есть являются этапами. Это позволяет максимально эффективно запутать исходный код, так как появляются связи ещё и между самими режимами обфускации.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/use-case-diagram-2.0.png" class="figure-img img-fluid mx-auto d-block" alt="UML диаграмма прецедентов">
+							<figcaption class="figure-caption text-center">Рисунок 1 &ndash; UML диаграмма прецедентов</figcaption>
+						</figure>
+					</div>
+					<p>
+						Исходя из спроектированной диаграммы прецедентов, была разработана диаграмма потоков данных обфускатора, которая представлена на рис. 2.
+					</p>
+					<p>
+						Приложение будет состоять из одной формы, в которой будет содержаться главный рабочий класс Обфускатор, который будет выполнять всю работу. В свою очередь, в зависимости от выбранных режимов, обфускатор будет использовать различные запутыватели, которые предоставляет программа. После обфускации программа будет выдавать выходной файл, который будет содержать обфусцированный JavaScript код.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/dataflow-diagram.png" class="figure-img img-fluid mx-auto d-block" alt="Диаграмма потоков данных работы обфускатора">
+							<figcaption class="figure-caption text-center">Рисунок 2 &ndash; Диаграмма потоков данных работы обфускатора</figcaption>
+						</figure>
+					</div>
+					<p>
+						Все остальные диаграммы, разработанные при проектировании обфускатора, представлены в [8].
+					</p>
+					<h4>2 Алгоритмы обфусцирующих преобразований</h4>
+					<p>
+						Эффективность программы-обфускатора зависит от её алгоритмов, которые преобразовывают (запутывают) исходный код программ [<a href="http://citforum.ru/security/articles/obfus/" target="_blank">9</a>].
+					</p>
+					<h4>2.1 Общий алгоритм работы обфускатора</h4>
+					<p>
+						Необходимо отметить, что основным объединяющим алгоритмом программы является алгоритм, в котором объединяются все запутывающие алгоритмы и используются для приведения исходного кода в непонятный для человека вид (см. рис. 3).
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/general-obfuscating-algorithm.png" class="figure-img img-fluid bordered-image" alt="Общий алгоритм работы обфускатора">
+							<figcaption class="figure-caption text-center">Рисунок 3 &ndash; Общий алгоритм работы обфускатора</figcaption>
+						</figure>
+					</div>
+					<h4>2.2 Общий алгоритм работы обфускатора</h4>
+					<p>
+						Суть этого преобразования заключается в том, чтобы преобразовать допустимые условные выражения if-else в тернарный оператор. Этот алгоритм нацелен на ухудшение читаемости кода, без каких-либо фундаментальных преобразований. Алгоритм преобразования на псевдоязыке представлен на рис. 4.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/if-statements-algorithm.png" class="figure-img img-fluid bordered-image" alt="Алгоритм преобразования условных выражений">
+							<figcaption class="figure-caption text-center">Рисунок 4 &ndash; Алгоритм преобразования условных выражений</figcaption>
+						</figure>
+					</div>
+					<h4>2.3 Алгоритм логического преобразования</h4>
+					<p>
+						Данный алгоритм представляет собой простое инвертирование сравнений таким образом, чтобы вместо исходного оператора использовалось отрицание противоположного оператора с отрицаемыми операндами (см. рис. 5) [8]. На схеме алгоритма указана только часть логических операторов. Операторы, не попавшие на схему, преобразуются по такому же алгоритму.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/logic-statements-algorithm.png" class="figure-img img-fluid mx-auto d-block" alt="Алгоритм преобразования логических выражений">
+							<figcaption class="figure-caption text-center">Рисунок 5 &ndash; Алгоритм преобразования логических выражений</figcaption>
+						</figure>
+					</div>
+					<p>
+						Необходимо отметить, что можно использовать и другие логические преобразования, применяя логические эквиваленции, однако в JavaScript результатом логического выражения может быть не только true или false, но и ещё и объект, поэтому использование более сложных формул преобразований может приводить к ошибкам.
+					</p>
+					<h4>2.4 Алгоритм сокращения констант</h4>
+					<p>
+						По стандарту ECMA Script 5.0 в языке JavaScript ещё нет констант, которые бы обеспечивал сам язык, поэтому программа сама анализирует переменные, которые не изменяют своего значения в исходном коде пользовательской программы.
+					</p>
+					<p>
+						Данное преобразование состоит из следующих этапов:
+						<ul>
+							<li>найти возможные константы в коде;</li>
+							<li>исключить меняющиеся переменные;</li>
+							<li>исключить переменные, чьё значение не является простым, то есть не является числом, строкой или булевым значением;</li>
+							<li>заменить в местах использования констант их значением.</li>
+						</ul>
+					</p>
+					<p>
+						Детальное описание алгоритма представлено на рис. 6.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/shrinking-constants-algorithm.png" class="figure-img img-fluid bordered-image" alt="Алгоритм сокращения констант">
+							<figcaption class="figure-caption text-center">Рисунок 6 &ndash; Алгоритм сокращения констант</figcaption>
+						</figure>
+					</div>
+					<h4>2.5 Алгоритм кодирования чисел</h4>
+					<p>
+						Данный алгоритм очень важен для программной системы, так как большая часть исходного кода в любом языке программирования использует огромное количество чисел для счётчиков различного рода, для циклов и для числовых констант.
+					</p>
+					<p>
+						Суть этого алгоритма заключается в том, чтобы заменить числа некоторым набором арифметических выражений, и после этого представить все числа в 16-ичной системе счисления [8]. Детальный алгоритм представлен на рис. 7.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/coding-numbers-algorithm-2.0.png" class="figure-img img-fluid mx-auto d-block" alt="Алгоритм кодирования чисел">
+							<figcaption class="figure-caption text-center">Рисунок 7 &ndash; Алгоритм кодирования чисел</figcaption>
+						</figure>
+					</div>
+					<h4>2.6 Алгоритм кодирования строк</h4>
+					<p>
+						Данный алгоритм также является важным в работе программной системы. Почти во всех программах используются какие-либо строковые константы, будь то сообщения об ошибках или текстовые элементы интерфейса. Для, того чтобы труднее было разобрать исходный код программы, необходимо преобразовать и скрыть явное использование таких строковых констант.
+					</p>
+					<p>
+						В данном преобразовании строки представляются в виде конкатенации вызовов различных функций, а также в виде кодировки BASE64. Все разбиение строковых констант происходит каждый раз случайно, обеспечивая различный исходный код на выходе обфускатора [<a href="http://citforum.ru/security/articles/obfus/" target="_blank">9</a>].
+					</p>
+					<p>
+						Детальный алгоритм представлен на рис. 8.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/coding-strings-algorithm.png" class="figure-img img-fluid bordered-image" alt="Алгоритм кодирования строковых констант">
+							<figcaption class="figure-caption text-center">Рисунок 8 &ndash; Алгоритм кодирования строковых констант</figcaption>
+						</figure>
+					</div>
+					<h4>2.7 Алгоритм переименования переменных</h4>
+					<p>
+						Данное преобразование исходного кода является самым не затратным с точки зрения ресурсов преобразования, но с точки зрения конечного запутывания является одним из самых эффективных алгоритмов обфускации.
+					</p>
+					<p>
+						Главная особенность этого алгоритма в том, чтобы представить имена переменных и функций в виде непонятного для человека набора символов [<a href="http://citforum.ru/security/articles/obfus/" target="_blank">9</a>]. Подробный разбор алгоритма представлен на рис. 9.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/renaming-variables-algorithm.png" class="figure-img img-fluid mx-auto d-block" alt="Алгоритм переименования переменных">
+							<figcaption class="figure-caption text-center">Рисунок 9 &ndash; Алгоритм переименования переменных</figcaption>
+						</figure>
+					</div>
+					<h4>2.8 Алгоритм перемешивания функций</h4>
+					<p>
+						Данный алгоритм не является напрямую запутывающим преобразованием, его нельзя выбрать через интерфейс пользователя. Он служит для того, чтобы перемешивать глобальные функции, которые могли появиться вследствие других запутывающих преобразований (мусорные функции). Иначе, если это преобразование не использовать, то мусорные функции располагались бы в конце документа с исходным кодом и могли бы легко быть удалены человеком, который взялся бы деобфусцировать исходный код. Детальное описание алгоритма представлено на рис. 10.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/shuffling-functions-algorithm.png" class="figure-img img-fluid mx-auto d-block" alt="Алгоритм перемешивания функций">
+							<figcaption class="figure-caption text-center">Рисунок 10 &ndash; Алгоритм перемешивания функций</figcaption>
+						</figure>
+					</div>
+					<h4>3 Результат разработки программы-обфускатора</h4>
+					<p>
+						После разработки алгоритмов, они были реализованы на языке Java, где и были объединены в один главный обфусцирующий алгоритм.
+					</p>
+					<p>
+						На рис. 11 представлена экранная форма обфускатора, на которой видно, что пользователь выбрал все доступные режимы обфускации. Также видно, что исходный код существенно изменился.
+					</p>
+					<p>
+						Как показало тестирование на экспертных группах, код стал более запутанным. Эксперты сделали субъективное заключение – сложность понимания исходного кода увеличилась в 3 раза.
+					</p>
+					<div class="row justify-content-center">
+						<figure class="figure">
+							<img src="obfuscating-images/obfuscator-ui.png" class="figure-img img-fluid mx-auto d-block" alt="Экранная форма обфускатора">
+							<figcaption class="figure-caption text-center">Рисунок 11 &ndash; Экранная форма обфускатора</figcaption>
+						</figure>
+					</div>
+					<h4>Выводы</h4>
+					<p>
+						В ходе выполнения данной работы были проанализированы существующие обфускаторы языка JavaScript. После их детального изучения, были выявлены присущие им недостатки, учитывая которые, было решено разработать и реализовать собственные эффективные алгоритмы обфускации.
+					</p>
+					<p>
+						Также была разработана последовательность объединения запутывающих преобразований (общий алгоритм работы обфускатора) с максимальной степенью запутанности.
+					</p>
+					<p>
+						Дальнейшие разработка и реализация алгоритмов обфускации являются перспективными, так как разработанные алгоритмы работают напрямую с кодом, меняя внешнее представление кода, в то время как, преобразования потока управления программ не производится. То есть разработанные алгоритмы принадлежат к категориям лёгкой и средней степеням обфускации, а алгоритмы обфускации сложной степени необходимо разрабатывать.
+					</p>
+					<p class="text-center h4"><b>
+						Литература
+					</b></p>
+					<ol>
+						<li>Обзор существующих обфускаторов и их алгоритмов. Компьютерная и программная инженерия &ndash; 2015 год: &ndash; Донецк: ДонНТУ, 2015. &ndash; С.117 &ndash; 119.</li>
+						<li>Википедия. Обфускация [электронный ресурс]. &ndash; Режим доступа: <a href="https://ru.wikipedia.org/wiki/Обфускация" target="_blank">https://ru.wikipedia.org/wiki/Обфускация</a></li>
+						<li>YUI Compressor [электронный ресурс]. &ndash; Режим доступа: <a href="https://github.com/yui/yuicompressor" target="_blank">https://github.com/yui/yuicompressor</a></li>
+						<li>Packer  [электронный ресурс]. &ndash; Режим доступа: <a href="http://dean.edwards.name/packer" target="_blank">http://dean.edwards.name/packer</a></li>
+						<li>JavaScriptObfuscator. Canada [электронный ресурс]. &ndash; Режим доступа: <a href="https://www.javascriptobfuscator.com/" target="_blank">https://www.javascriptobfuscator.com/</a></li>
+						<li>Google Closure Compiler  [электронный ресурс]. &ndash; Режим доступа: <a href="https://developers.google.com/closure/compiler/" target="_blank">https://developers.google.com/closure/compiler/</a></li>
+						<li>Диаграммы прецедентов: крупным планом [электронный ресурс]. &ndash; Режим доступа: <a href="http://www.intuit.ru/studies/courses/1007/ 229/lecture/5962" target="_blank">http://www.intuit.ru/studies/courses/1007/ 229/lecture/5962</a></li>
+						<li>Проектирование обфускатора для языка JavaScript. ИУСМКМ &ndash; 2016: VII Международная научно-техническая конференция, 26 мая 2016: &ndash; Донецк: ДонНТУ, 2016. &ndash; С. 167 &ndash; 173.</li>
+						<li>LynX. Обфускация и защита программных продуктов // CITForum.  [электронный ресурс]. &ndash; Режим доступа: <a href="http://citforum.ru/security/articles/obfus/" target="_blank">http://citforum.ru/security/articles/obfus/</a></li>
+						<li>Java Obfuscator &ndash; String Encryption // zelix.com [электронный ресурс]. &ndash; Режим доступа: <a href="http://www.zelix.com/klassmaster/featuresStringEncryption.html" target="_blank">http://www.zelix.com/klassmaster/featuresStringEncryption.html</a></li>
+					</ol>
+				</div>
+			</div>
+			<!--/.Card-->
+		</div>
+	</div>
+
+
+	<footer class="page-footer center-on-small-only stylish-color-dark">
+		<!--Social buttons-->
+		<div class="social-section text-center container-fluid">
+			<div class="row">
+				<div class="col">
+					<h1>Контакты</h1>
+				</div>
+				<!-- Social -->
+				<div class="col-6">
+					<ul>
+						<li>
+							<a href="https://github.com/smedgaus" target="_blank">
+								<button type="button" class="btn btn-elegant text-capitalize">
+									<i class="fa fa-git"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://vk.com/smedgaus" target="_blank">
+								<button type="button" class="btn unique-color text-capitalize">
+									<i class="fa fa-vk"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/sergey-medgaus-70b22a78/"  target="_blank">
+								<button type="button" class="btn special-color text-capitalize">
+									<i class="fa fa-linkedin"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/smedgaus"  target="_blank">
+								<button type="button" class="btn indigo darken-3 text-capitalize">
+									<i class="fa fa-facebook"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/developer?id=MedgausApps"  target="_blank">
+								<button type="button" class="btn green darken-2 text-capitalize">
+									<i class="fa fa-android"></i>
+								</button>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col text-left">
+					<i class="fa fa-skype mr-1"></i> sergey.medgaus <br/>
+					<a href="mailto:medgaus-sergey@yandex.com">
+						<i class="fa fa-envelope mr-1"></i> medgaus-sergey@yandex.com
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Social buttons-->
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="row">
+				<div class="col clearfix">
+					<span class="float-left ml-4">Copyright 2017 <i class="fa fa-copyright"></i> Sergey Medgaus</span>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Copyright-->
+	</footer>
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="../js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="../js/mdb.min.js"></script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>

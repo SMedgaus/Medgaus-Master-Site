@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Salman Jamali &ndash; Agents and Multi-agent Systems. Experiencing JACK (AOP Group)</title>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="../../css/font_awesome.min.css">
+	<!-- Bootstrap core CSS -->
+	<link href="../../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="../../css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="../../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="mr-5 pr-5 ml-5 pl-5">
+		<!--Navbar-->
+		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
+			<!-- Collapse button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="../../index.html"><i class="fa fa-book mr-1"></i>Резюме</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../bio/bio_ru.html"><i class="fa fa-user mr-1"></i>Биография</a>
+					</li>
+					<!-- Dropdown -->
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<i class="fa fa-graduation-cap mr-1"></i>Тематический раздел<span class="sr-only">(current)</span>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="../../abstract/abstract_ru.html"><i class="fa fa-file-text mr-2"></i>Реферат</a>
+							<a class="dropdown-item active" href="../../library/library_ru.html"><i class="fa fa-font mr-2"></i>Библиотека</a>
+							<a class="dropdown-item" href="../../links/links_ru.html"><i class="fa fa-link mr-2"></i>Ссылки</a>
+							<a class="dropdown-item" href="../../report/report_ru.html"><i class="fa fa-binoculars mr-2"></i>Отчёт о поиске</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../individual/ind_ru.html">
+							<i class="fa fa-coffee mr-1"></i>Индивидуальный раздел
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://donntu.ru" target="_blank">
+							<i class="fa fa-university mr-1"></i>ДонНТУ
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://masters.donntu.ru" target="_blank">
+							<i class="fa fa-users mr-1"></i>Портал магистров
+						</a>
+					</li>
+				</ul>
+				<!-- Links -->
+			</div>
+			<!-- Collapsible content -->
+		</nav>
+		<!--/.Navbar-->
+
+		<div class="mb-1 mt-5 pt-3">
+			<!--Back arrow-->
+			<div class="sticky" style="position: fixed; top: 60px; left: 20px; font-size: 4rem;">
+				<a href="../library_ru.html#article10" target="_self">
+					<img src="../../images/arrow-back.png" alt="" class="z-depth-1 hoverable rounded-circle">
+				</a>
+			</div>
+
+			<!--Card-->
+			<div class="card">
+				<!--Card content-->
+				<div class="card-body text-justify">
+					<p class="text-center h4"><b>
+						Agents and Multi-agent Systems. Experiencing JACK (AOP Group)
+					</b></p>
+					<p>
+						<b>Автор:</b> Salman Jamali
+						<br>
+						<b>Автор перевода:</b> Медгаус С.В.
+					</p>
+					<p>
+						<b>Источник (англ.):</b> Salman Jamali, Agents and Multi-agent Systems. Experiencing JACK (AOP Group) [<a href="https://www.codeproject.com/Articles/13544/Agents-and-Multi-agent-Systems" target="_blank">часть 1</a>, <a href="https://www.codeproject.com/Articles/13644/WebControls/WebControls/" target="_blank">часть 2</a>]
+					</p>
+					<p>
+						<b>Аннотация: </b>
+						<i>
+							В этой статье обсуждается изменение парадигмы в способе моделирования информационных систем, а также плюсы и минусы агентного подхода в создании программного обеспечения. Рассказывается о среде агентной разработки JACK от AOP group.
+						</i>
+					</p>
+					<h4>Введение</h4>
+					<p>
+						В мире, где даже человеческой рабочей силе есть альтернатива, кажется, нет места человеку. Необходимо отметить, что развитие многоагентных систем превысило все ожидания и ушло далеко за рамки видения, которое их определило. Мы наблюдали за эволюцией программного обеспечения (ПО) и сейчас почти все различные виды работ в офисах и заводах могут быть выполнены компьютерами. Однако, редко замечается <q>сдвиг технологий</q> разработки, который влияет на развитие многоагентных систем и приложений. Было время, когда ПО определялось как <q>реакция на действие</q>, но отрасль компьютерных наук отличается от других отраслей, несомненно она показывает очень высокую скорость роста и развития, и создание огромного количества новых технологий является неотъемлемой часть отрасли.
+					</p>
+					<h4>Многоагентные системы</h4>
+					<p>
+						Многоагентная система представляет собой ПО, имеющее уникальные свойства, которые отличают его от обычного ПО. Во-первых, агенты не просто реагируют на их Окружение, они способны воспроизводить Поведение, соответствующее их Цели, показывая инициативность. Это свойство называется Проактивностью. Во-вторых, они способны гибко и автономно действовать в Окружении, чтобы выполнить спроектированные Задачи. Простыми словами, агент работе на кого-то для чего-то, руководствуясь своими Задачами и Целями.
+					</p>
+					<p>
+						С технической точки зрения агенты имеют Роли, Поведения, Функциональности и Цели. Неважно что из себя представляет агент, будь то Робот Знаний (Knowbots), Программный Робот (Softbot) или персональный помощник, все они должны иметь набор вышеупомянутых свойств агента. Роль Агента Покупок &ndash; действовать как личный помощник пользователя, Поведение &ndash; как он взаимодействует с покупателем, его интерфейсом и представлением, его Функциональность включает в себя сравнение цен товаров в Интернете и использование их, чтобы найти лучшие цены товаров и, наконец, Цель &ndash; найти оптимальное (с точки зрения цены и удобства) предложение для того, что хочет найти пользователь.
+					</p>
+					<p>
+						Наиболее правильным разделением агентов является разделение по проявляемым характеристикам: автономность, реактивность, проактивность, взаимодействие, интеллект, мобильность и самоорганизация. Большинство понятий говорят сами за себя кроме одного. В контексте агентов нет ничего более влиятельного и привлекательного, чем их самоорганизация. Это способность сущности организовывать и улучшать свои внутренние процессы, связи, иерархии без внешнего управления или указаний. В этом месте включается фактор обучения, что отличает от обычного ПО. В то же время &ndash; это первый шаг к будущему вездесущей и повсеместной компьютеризации. Впечатлены? И так, текущие исследования преследуют одну главную цель &ndash; создать систему, которая будет встроена в окружающую среду, полностью подключённая, интуитивная, портативная и постоянно доступная и где каждый узел системы будет способен выполнять свои задачи, основываясь на том, что он выучил, взаимодействуя с другими узлами.
+					</p>
+					<p>
+						Попробуем заглянуть в будущее. Если всё подключено, значит всё должно быть составляющей определённой системы и, если все компоненты будут принимать решения на своём уровне с двумя мерами предосторожности (Безопасность и Предсказуемость), тогда все компоненты будут агентами. Такая система называется многоагентной системой (МАС). МАС состоит из нескольких агентов, способных на взаимодействие, где каждый агент может быть программным агентом, или роботом, или человеком. Следовательно, мы можем спорить, что не существует одноагентной системы, так как каждый агент взаимодействует с другими агентами, или, по крайней мере, с человеком. На самом деле человеческие организации и цивилизации сами по себе могут быть рассмотрены как пример МАС. Люди так же, как и агенты, по сути самоорганизованные, следовательно, можно сказать что мы являемся МАС в большом масштабе. Программная система представляет решение проблемы в какой-либо предметной области. Условно, она имеет подсистемы, где у каждой системы есть свои компоненты. Можно различить взаимодействия, происходящие в системе. Частые взаимодействия происходят между компонентами подсистем, а редкие взаимодействия происходят между подсистемами.
+					</p>
+					<div class="row justify-content-center clearfix">
+						<figure class="figure">
+							<img src="system-decomposition.jpg" class="figure-img img-fluid mx-auto d-block" alt="Декомпозиция системы на подсистемы и компоненты">
+							<figcaption class="figure-caption text-center">Рисунок 1 &ndash; Декомпозиция системы на подсистемы и компоненты</figcaption>
+						</figure>
+					</div>
+					<p>
+						Другой способ декомпозиции проблемы предложен сторонниками агентного подхода. В такой модели система разделяется на множество интерактивных и автономных агентов, у которых есть определённый набор целей для достижения. В отличие от плохо определённых связей и привилегий между подсистемами, взаимодействие между агентами значительно дискриминируется через язык общения агентов (ЯОА). Агенты, способные гибко решать проблемы, также способны делать контекстно-зависимые решения о природе и масштабе их взаимодействий. Также, как и в реальном мире, вы не пойдёте к тому же парикмахеру, который в прошлый раз очень плохо вас постриг или вы не будете посылать запрос, чтобы найти самую низкую цену товара в дорогие и высококачественные онлайн магазины. Это показывает как декомпозиция на основе агентов становится естественным феноменом для дизайна иерархии проблем реального мира.
+					</p>
+					<div class="row justify-content-center clearfix">
+						<figure class="figure">
+							<img src="intersecting-spheres.jpg" class="figure-img img-fluid mx-auto d-block" alt="Пересечение сфер влияния агентов в среде">
+							<figcaption class="figure-caption text-center">Рисунок 2 &ndash; Пересечение сфер влияния агентов в среде</figcaption>
+						</figure>
+					</div>
+					<p>
+						Но дело в том, что неважно, что именно мы выберем &ndash; объектную или агентную модель, важнее как мы будем развиваться дальше. Если выберем агентную модель, то мы будем вынуждены заменить все системы на МАС, которые будут организованы внутри и синхронизированы с бóльшими МАС. Системы, объединённые для формирования сообщества систем, где каждый участник, например, агент, работает на общие цели системы. Практическое влияние таких агентных систем заключается в том, что в ближайшее будущее будет в Интернете и персональных вычислениях.
+					</p>
+					<p>
+						Мы уже имеем планировщиков, которые распределяют наши встречи, персональных помощников, которые напоминают нам о днях рождения наших родственников, инструменты оценки релевантности веб-страниц, автоматические заполнители форм, интеллектуальные менеджеры загрузок и т.д. А теперь представьте поисковую систему, которая никогда не скажет <q>нет</q>, потому что она не может сказать <q>нет</q>, так как у неё всегда есть подходящий ответ. Такая поисковая машина могла бы использовать модель сотрудничества всех поисковых машин, объединяя их индексы веб-страниц. Вы можете провести аналогию между моделью сотрудничества и Монополией, в которой агенты-программы-игроки формируют альянсы с каждым, кто хорошо играет и такие союзы создаются и разрушаются во время игры. Да, вполне возможно программно достичь такого эгоистического поведения, так как это одна из естественных оптимальных стратегий для каждого игрока. Решение &ndash; создание возможностей полное использование агента, но у нас есть большое количество программных агентов, которые коммерчески взаимодействуют с наиболее необходимыми свойствами. Такие тенденции можно заметить в веб-сервисах, внутренних базах данных, интерфейсах естественных языков, почтовых клиентов, процессоров обработки данных в реальном времени, компьютерных играх и т.д. Более того, они даже присутствуют в таких требовательных системах реального времени, где нет права на ошибку, такие как автопилот в самолёте или управляемые ракеты.
+					</p>
+					<h4>JACK (Agent Development Environment)</h4>
+					<p>
+						Сравнивая различные практики и методологии проектирования была замечена неоднозначность в понятии что должно быть частью агента и агентной системы. Проводя поиск оптимального ПО был найден JACK, который использовал язык Java для того, чтобы внедрить концепции агентно-ориентированного программирования. И так, согласно принятой концепции вместо объектов мы говорим об агентах. Касательно фундаментальных частей, эти агенты имеют те же составляющие, что и обычные объекты (данные и методы), но они имеют и дополнительные составляющие:
+						<ul>
+							<li><b>способности</b> &ndash; это многоразовые компоненты агентов, такие же как модули в объектно-ориентированной подходе. Они скрывают причинные составляющие (события, планы и т.д.) для того, чтобы обеспечить определённую возможность любому агенту;</li>
+							<li><b>планы</b> похожи на функции в объектно-ориентированных классах. Они являются инструкциями, которым следует, чтобы достичь целей и обработать возникающие события;</li>
+							<li><b>события</b> запускают планы, точно так же, как в .Net есть обработчики событий, так в JACK есть планы и они запускаются, как только определённое событие происходит;</li>
+							<li><b>наборы убеждений</b> отражают убеждения агента, используя универсальную модель отношений. К ним могут применены запросы и когда происходят какие-либо изменения, события могут быть на них <q>завязаны</q>.</li>
+						</ul>
+					</p>
+					<div class="row justify-content-center clearfix">
+						<figure class="figure">
+							<img src="jack-ui.png" class="figure-img img-fluid mx-auto d-block" alt="Интерфейс JACK">
+							<figcaption class="figure-caption text-center">Рисунок 3 &ndash; Интерфейс JACK</figcaption>
+						</figure>
+					</div>
+					<h4>Заключение</h4>
+					<p>
+						Дело в том, что мы не можем отрицать предположение, что когда-то машины захватят человечество силой, но в то же время, мы не можем игнорировать предположение, которое заключается в удобстве и удовольствии, если у нас получится обеспечить меры предосторожности: безопасность и предсказуемость. Эта мечта предлагает нам бесконечные возможности, в ней человеческий труд будет заменён на машинный и налоги, которые мы платим, будут заменены на доходы, которые будет выплачивать государство.
+					</p>
+
+
+					<ol>
+						<p class="text-center h4"><b>
+							Полезные сайты
+						</b></p>
+						<li><a href="http://www.jamesodell.com" target="_blank">www.jamesodell.com</a>: Founder of Agent Orientation</li>
+						<li><a href="http://www.agentland.com">www.agentland.com</a>: Lists some agents as freeware/shareware downloads</li>
+						<li><a href="http://www.fipa.org">www.fipa.org</a>: Foundation for intelligent Physical Agents</li>
+						<li><a href="http://jade.tilab.com/">www.jade.tilab.com</a>: A tool for development of Agents</li>
+						<li><a href="http://www.agent-software.com/products/jack/">www.agent-software.com</a>: A tool for development of Agents</li>
+
+						<p class="text-center h4"><b>
+							Литература
+						</b></p>
+						<li>Artificial Intelligence: A Modern Approach by Russel Norving</li>
+						<li>Software Engineering: A Practitioner’s Approach by Pressman</li>
+						<li>Research Paper on AOSE by Nicholas R. Jennings and Michael Wooldridge</li>
+						<li>Preliminary stage Document by FIPA, founded by James Odell; Topic: Modeling: Agent Class Diagrams</li>
+					</ol>
+				</div>
+			</div>
+			<!--/.Card-->
+		</div>
+	</div>
+
+
+	<footer class="page-footer center-on-small-only stylish-color-dark">
+		<!--Social buttons-->
+		<div class="social-section text-center container-fluid">
+			<div class="row">
+				<div class="col">
+					<h1>Контакты</h1>
+				</div>
+				<!-- Social -->
+				<div class="col-6">
+					<ul>
+						<li>
+							<a href="https://github.com/smedgaus" target="_blank">
+								<button type="button" class="btn btn-elegant text-capitalize">
+									<i class="fa fa-git"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://vk.com/smedgaus" target="_blank">
+								<button type="button" class="btn unique-color text-capitalize">
+									<i class="fa fa-vk"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/sergey-medgaus-70b22a78/"  target="_blank">
+								<button type="button" class="btn special-color text-capitalize">
+									<i class="fa fa-linkedin"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/smedgaus"  target="_blank">
+								<button type="button" class="btn indigo darken-3 text-capitalize">
+									<i class="fa fa-facebook"></i>
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/developer?id=MedgausApps"  target="_blank">
+								<button type="button" class="btn green darken-2 text-capitalize">
+									<i class="fa fa-android"></i>
+								</button>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col text-left">
+					<i class="fa fa-skype mr-1"></i> sergey.medgaus <br/>
+					<a href="mailto:medgaus-sergey@yandex.com">
+						<i class="fa fa-envelope mr-1"></i> medgaus-sergey@yandex.com
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Social buttons-->
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="row">
+				<div class="col clearfix">
+					<span class="float-left ml-4">Copyright 2017 <i class="fa fa-copyright"></i> Sergey Medgaus</span>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Copyright-->
+	</footer>
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="../../js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="../../js/mdb.min.js"></script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>
