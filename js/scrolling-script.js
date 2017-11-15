@@ -1,6 +1,6 @@
 var height = $('.navbar.fixed-top').innerHeight();
 
-$('.flex-column .nav-link').click(function(){
+function scrollingFunc() {
 	var target = $(this).attr('href');
 	try{
 		var scrollTop = $(target).offset().top - height;
@@ -10,4 +10,7 @@ $('.flex-column .nav-link').click(function(){
 		console.log(e);
 	}
 
-})
+}
+
+$('.flex-column .nav-link').click(scrollingFunc)
+$('.links-reference').click(scrollingFunc)
