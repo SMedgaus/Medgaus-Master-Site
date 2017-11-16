@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Реферат &ndash; Медгаус Сергей Владимирович &ndash; Архитектура и функционирование программных агентов в имитационной модели трудоустройства выпускников вуза многоагентного типа</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="../css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target="#scrollspy" data-offset="70" style="position: relative;" class="mt-5 pt-4">
+	<div class="container">
+		<!--Navbar-->
+		<nav class= "navbar fixed-top navbar-expand-lg navbar-dark stylish-color">
+			<!-- Collapse button -->
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+			aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+			<!-- Collapsible content -->
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<!-- Links -->
+				<ul class="navbar-nav mx-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="../indexe.html"><img src="../images/icons/cv.png" class="mr-1" width="18px" height="18px">CV</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../bio/bio_en.html"><img src="../images/icons/bio.png" class="mr-1" width="18px" height="18px">Biography</a>
+					</li>
+					<!-- Dropdown -->
+					<li class="nav-item active">
+						<a class="nav-link" href="../abstract/abstract_en.html"><img src="../images/icons/dissertation.png" class="mr-2" width="18px" height="18px">Abstract</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://donntu.org" target="_blank">
+							<img src="../images/icons/university.png" class="mr-1" width="18px" height="18px">DonNTU
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="http://masters.donntu.org" target="_blank">
+							<img src="../images/icons/masters.png" class="mr-1" width="18px" height="18px">Masters' site
+						</a>
+					</li>
+				</ul>
+				<!-- Links -->
+			</div>
+			<!-- Collapsible content -->
+		</nav>
+		<!--/.Navbar-->
+		<div class="row">
+			<div class="col-10">
+				<div class="container mb-1">
+					<!--Card-->
+					<div class="card">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Card image-->
+							<a href="../medgaus_big.jpg" target="_blank">
+								<img class="img-fluid float-left mr-3 hoverable" src="../photo.jpg" alt="Изображение магистра" width="180px" height="240px">
+							</a>
+							<!--Title-->
+							<h4 class="card-title">Sergey Medgaus</h4>
+							<h5>Faculty of computer science and technology</h5>
+							<h5>Department of software engineering</h5>
+							<h5>Specialty  <i><q>Software engineering</q></i></h5>
+							<h4 class="py-3"><i><b>Program agents architecture and functioning in the multi-agent simulation model of graduates' employment</b></i></h4>
+							<h5>Scientific adviser: Ph.D., Assoc. Oleg Fedyaev</h5>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-3">
+						<!--Card content-->
+						<div class="card-body blue lighten-5 rounded ">
+							<i>This abstract refers to a work that has not been completed yet. Estimated completion date: <strong>June 2018</strong>. Contant author or his scientific adviser after that date to obtain complete text.</i>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-3">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center">
+								Abstract
+							</h3>
+							<!--Card body-->
+							<div class="text-justify">
+								<h4 id="intro">Introduction</h4>
+								<p>
+									Having a higher education is an ordinary thing, and a large number of young people enter universities to obtain professions. At the same time, the problem of employing graduates is not completely solved, and young people who have received a diploma are struggling to get a job if they did not find one during their studies.
+								</p>
+								<p>
+									It is necessary to find the reasons of this problem to help graduates solving it. One factor is the psychological unpreparedness of students. Many students do not realize that the training time is given to them to acquire useful knowledge and skills, but they spend it in vain. [<a href="#links" class="links-reference">1</a>] Another factor is the complexity of interaction between the employer and the potential employee (young graduate). Very often, the graduate has many interviews before settling down for his first job, although this problem can be solved by modeling the employment process, using close cooperation of employers and higher education institutions.
+								</p>
+								<h4 id="theme-actuality">1. Relevance of the topic</h4>
+								<p>
+									Issues relating to forecasting employment of students are very relevant in our time. This work involves the creation of a software system that will allow predicting the success of his employment on the proposed businesses, based on the individual student's portrait. This system will be able to specify the training department of the possible gaps in students' knowledge or shortcomings of the training program.
+								</p>
+								<p>
+									In addition, multi-agent technology is used in modeling of this complex process, which is considered one of the most important and promising areas of information technology development [<a href="#links" class="links-reference">2</a>].
+								</p>
+								<h4 id="goals">2. Goals and objectives, planned practical results</h4>
+								<p>
+									Based on the foregoing, the <strong>purpose of this work</strong> is a program agent modeling of the graduates’ employment process with the subsequent recommendation of choosing an enterprise for employment.
+								</p>
+								<p>
+									Based on the research objective, the <strong>tasks of this work</strong> are formulated:
+									<ul>
+										<li>to analyze the process of obtaining and assimilating knowledge by students;</li>
+										<li>to consider the process of forming test tasks at enterprises, analyze them;</li>
+										<li>to develop the structure of a neural network model and choose the best algorithm for its learning;</li>
+										<li>to form on the basis of a survey of students the parameters of the company's attractiveness, based on its parameters;</li>
+										<li>to develop agent-based models of employers and students to simulate interviews;</li>
+										<li>to implement a multi-agent system in the JACK tool environment  [<a href="#links" class="links-reference">3</a>].</li>
+									</ul>
+								</p>
+								<p>
+									The <strong>object of research</strong> in this work is multi-agent modeling.
+								</p>
+								<p>
+									The <strong>subject of research</strong> is a multi-agent system with intelligent agents which functionality is based on neural networks.
+								</p>
+								<p>
+									The <strong>scientific novelty</strong> of this work is that the developed program system for simulating student interviews will take into account the knowledge of the real student (obtained by transferring them to his agent) and take into account the employer's test tasks with the possibility of their quick replacement with others. Moreover, the system will be trainable, and the employment forecast will be more accurate each time.
+								</p>
+								<p>
+									<strong>Planned practical results</strong>:
+									<ul>
+										<li>method of determining the attractiveness of the company for students;</li>
+										<li>method of transferring knowledge from real students to their agents;</li>
+										<li>developed multi-agent system for modeling the process of graduates’ employment, using intelligent agents on a neural network basis.</li>
+									</ul>
+								</p>
+								<h4 id="sources">3. Sources overview</h4>
+								<p>
+									Multi-agent systems are widely used in the world for solving complex, difficultly formalizable tasks. [<a href="#links" class="links-reference">4</a>]. They are used in computer games, creating movies  [<a href="#links" class="links-reference">5</a>], using expert systems and many other areas.
+								</p>
+								<h4>3.1 World sources overview</h4>
+								<p>
+									Multi-agent systems are receiving a lot of attention around the world. There are specialized sites that study the problems of multi-agent systems  [<a href="#links" class="links-reference">6-9</a>], in Israel there is even a special research group on intelligent agents [<a href="#links" class="links-reference">10</a>].
+								</p>
+								<p>
+									Although, as already mentioned above, multi-agent systems are widely used, there is no system that predicts the results of interviews and gives recommendations to graduates on the employment.
+								</p>
+								<h4>3.2 National sources overview</h4>
+								<p>
+									In the Russian Federation, neural network technologies are also developing and one of the founders of the Russian science of artificial intelligence and multi-agent technologies is Valery Tarasov, who devoted a huge number of articles to the problems and characteristics of neural networks and intellectual agents [<a href="#links" class="links-reference">11-14</a>]. Although much has been explored in the field of multi-agent technologies and various projects have been developed, for example, virtual cathedra, but there are no software systems that completely fulfill the goals and objectives of this work.
+								</p>
+								<h4>3.3 Local sources overview</h4>
+								<p>
+									In our university for many years, my scientific supervisor &ndash; Fedyaev Oleg Ivanovich, is carrying out multi-agent technologies. Together with Tatiana Zhabskaya they worked on the functioning of software agents in the training system, studied existing models of agent-oriented systems, intelligent agents [<a href="#links" class="links-reference">15</a>]. Also in their research was the creation of a virtual department of the university with a passing transformation of conceptual models, obtained by Gaia methodology, into physical models in the JACK tool environment. [<a href="#links" class="links-reference">16</a>].
+								</p>
+								<p>
+									Oleg Fedyaev together with the masters of the past years also engaged in research in the field of multi-agent systems:
+									<ul>
+										<li>Lyamin R.V. Multi-agent system of teaching students at the cathedral level;</li>
+										<li>Zaytsev I.M. Models of collective behavior of intelligent agents in modeling of the multi-agent system and enterprise management;</li>
+										<li>Zudikova Y.V. Efficiency evaluation of multi-agent simulation of systems with distributed intelligence;</li>
+										<li>Lukina Y.Y. Agent-oriented software models of human behavior in socio-economic environment;</li>
+										<li>Stropalov A.S. Neural models of software agents in socially-oriented multi-agent systems;</li>
+										<li>Grabchuk O.P. Agent‑based modeling of training and employment of young specialists;</li>
+										<li>Eliferov V.V. A multi-agent simulation model to predict the results of training and employment experts;</li>
+										<li>Kutashov R.I. Software implementation of the agent-based system for remote training of students in technical disciplines.</li>
+									</ul>
+								</p>
+								<h4 id="multi-agent-systems">4. Multi-agent systems theory</h4>
+								<p>
+									Multi-agent system will be used to simulate the process of employment. A multi-agent system is a collection of several interacting intellectual, mostly software-based, agents  [<a href="#links" class="links-reference">17</a>].
+								</p>
+								<p>
+									In multi-agent systems, agents have the following properties:
+									<ul>
+										<li>limited representation (no agent knows how the entire system is structured);</li>
+										<li>autonomy (partial independence of agents);</li>
+										<li>decentralization (there are no agents that could manage the whole system).  [<a href="#links" class="links-reference">18</a>]</li>
+									</ul>
+								</p>
+								<p>
+									Multi-agent systems can form complex behavior or self-organize, even if each agent individually has a simple algorithm of operation.
+								</p>
+								<p>
+									The international Foundation of Intelligent Physical Agents (FIPA) has adopted a number of standard requirements in order to be used in industrial projects for multi-agent systems:
+									<ul>
+										<li>the agent provides a set of services available to any agent in the multi-agent system;</li>
+										<li>the agent can exchange messages with any other agent;</li>
+										<li>all agents must limit their availability from other agents;</li>
+										<li>all agents must identify their relationship, reaction to events, etc.;</li>
+										<li>each agent must have a unique identifier.</li>
+									</ul>
+								</p>
+								<h4 id="models">5. Creating adequate agent models</h4>
+								<p>
+									In order to create adequate models of student agents, it is necessary to extract knowledge and skills from students. To do this, a discipline for which you are going to assess the level of knowledge and skills, it is necessary to create a list of knowledge and skills obtained by the student after mastering this course. After that, the student is offered test tasks, for which he must determine what knowledge and skills are needed to solve each of the tasks. Further, his answers are checked against the correct ones and the level of possession is given by this or that knowledge or skill. After that, these levels of knowledge and skills are introduced into the software agent. Thus, the agent is endowed with the knowledge of a real student and can represent it in virtual interviews.
+								</p>
+								<p>
+									A similar process occurs with the employer. He must create a list of knowledge and skills necessary for work and transfer this knowledge to his representative in the multi-agent system &ndash; his agent. In parallel, the employer informs his agent of his characteristics for the subsequent determination of the attractiveness of the firm for the student. At the same time, students transfer knowledge to their agent representatives as signs of an attractive firm for them. After that the modeling of the employment process takes place:
+									<ol>
+										<li>Taking the necessary knowledge from the employer's tasks;</li>
+										<li>Search for attractive firms by student agents;</li>
+										<li>Getting tested for these firms;</li>
+										<li>Issuance of the results of modeling and relevant recommendations on employment.</li>
+									</ol>
+								</p>
+								<h4 id="ide">6. Environment for creating multi-agent systems</h4>
+								<p>
+									JACK &ndash; a software system, a platform for developing multi-agent systems, is an intermediate layer between the operating system and the multi-agent model.
+								</p>
+								<p>
+									It was this agent platform that was chosen for the development of the software system for modeling the employment process, because it supports the Gaia methodology and meets the international FIPA standard. Also this system will function on all computers on which Java is supported, therefore, this system is very mobile and platform independent.
+								</p>
+								<p>
+									So we talk about agents. From an implementation perspective, these agents having the same fundamental members as in objects (data members, functionalities), have additionally the following constituents:
+									<ul>
+										<li><strong>capabilities</strong> is the name given to the reusable components of agents, just like the modules in object-orientation. They encapsulate the reasoning constituents (events, plans, sub-capabilities, etc.) to provide a certain ability to any agent;</li>
+										<li><strong>plans</strong> are similar to functions in object-oriented classes. They are the instructions the agent follows to try to achieve its goals and handle its designated events;</li>
+										<li><strong>events</strong> trigger plans. Just as we have event handlers in .NET, we have plans in Jack. And they are executed as soon as certain events occur;</li>
+										<li><strong>belief sets</strong> represent agent beliefs using a generic relational model. Queries can be applied on them and, when some changes occur, events can be associated with those changes. [<a href="#links" class="links-reference">19</a>]</li>
+									</ul>
+								</p>
+								<h4 id="final">Conclusion</h4>
+								<p>
+									In the course of the work, an analysis was made of the process of employing students and the resulting problems. Their causes, as well as the ways to solve them, are considered.
+								</p>
+								<p>
+									As a solution, multi-agent modeling of this process using intelligent agents with a neural network architecture.
+								</p>
+								<p>
+									The methods for extracting knowledge from students and employers are formulated, and the process of functioning of the multi-agent system.
+								</p>
+								<p>
+									Models of neural networks of intelligent agents and their learning algorithm are proposed.
+								</p>
+								<p>
+									As a software platform through which agents of students and employers will be modeled, the JACK software environment will be used, which is a powerful tool for implementing a multi-agent system.
+								</p>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+
+					<!--Card-->
+					<div class="card mt-4">
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h3 class="card-title text-center" id="links">References</h3>
+							<!--Card body-->
+							<div class="text-justify">
+								<ol>
+									<li>Шилина Е.Б. Проблема трудоустройства выпускников после вузов // Научное сообщество студентов: Междисциплинарные исследования: сб. ст. по мат. III междунар. студ. науч.-практ. конф. № 3. &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.sibac.info/sites/default/files/conf/file/stud_3_3.pdf" target="_blank">sibac.info/sites/default/files/conf/file/stud_3_3.pdf</a></li>
+									<li>Агенты, многоагентные системы, виртуальные сообщества: стратегическое направление в информатике  и  искусственном интеллекте Тарасов В.Б. Журнал <q>Новости искусственного интеллекта</q> №2, 1998 &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.raai.org/library/ainews/1998/2/TARASOV.ZIP" target="_blank">http://www.raai.org/library/ainews/1998/2/TARASOV.ZIP</a></li>
+									<li>Инструментальная среда JACK &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.agent-software.com/products/jack/" target="_blank">http://www.agent-software.com/products/jack/</a></li>
+									<li>Портал, посвящённый искусственному интеллекту &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.aiportal.ru/articles/multiagent-systems/multiagent-systems.html" target="_blank">http://www.aiportal.ru/articles/multiagent-systems/multiagent-systems.html</a></li>
+									<li>Использование многоагентных систем в играх и фильмах. Сайт компании &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.massivesoftware.com/" target="_blank">http://www.massivesoftware.com/</a></li>
+									<!-- Мировые источники -->
+									<li>FIPA. Международная организация стандартизации агентных технологий &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.fipa.org/index.html" target="_blank">http://www.fipa.org/index.html</a></li>
+									<li>AIportal.ru &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.aiportal.ru/" target="_blank">http://www.aiportal.ru/</a></li>
+									<li>Artificial Intelligence: A Modern Approach &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://aima.cs.berkeley.edu/" target="_blank">http://aima.cs.berkeley.edu/</a></li>
+									<li>Лаборатория многоагентных систем &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://mas.cs.umass.edu/" target="_blank">http://mas.cs.umass.edu/</a></li>
+									<li>Израильская исследовательская группа по многоагентым системам &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.cs.huji.ac.il/labs/mas/proc.php" target="_blank">http://www.cs.huji.ac.il/labs/mas/proc.php</a></li>
+									<!-- Национальные источники -->
+									<li>Тарасов В.Б. Агенты, многоагентные системы, виртуальные сообщества: стратегическое направление в информатике и искусственном интеллекте // Новости искусственного интеллекта. &ndash; 1998. &ndash; №2. &ndash; С.5-63.</li>
+									<li>Тарасов В.Б.  Современные направления искусственного интеллекта // Кибернетика &ndash; ожидания и результаты. Политехнические чтения. Вып.2.&ndash; М.: Знание, 2002.&ndash; С.105-111.</li>
+									<li>Интеллектуальные обучающие системы и виртуальные учебные организации: Монография/ В.В.Голенков, В.Б.Тарасов, О.Е.Елисеева и др.: Под ред. В.В.Голенкова и В.Б.Тарасова. &ndash; Мн.: БГУИР, 2001. &ndash; 488 с. (с.25-79).</li>
+									<li>Тарасов В.Б. Агенты и многоагентные системы: основные истоки, подходы, принципы и направления // Компьютерная хроника. &ndash; 1998. &ndash; №12. &ndash; С.103-122.</li>
+									<!-- Локальные источники -->
+									<li>Научн. тр. ДонНТУ, серия <q>Информатика, кибернетика и вычислительная техника</q> (ИКВТ-2008), выпуск 9(132) &ndash; Донецк: ДонНТУ, 2008. &ndash; с. 249-254.</li>
+									<li>Проектирование виртуальной кафедры университета на основе многомодельного агентно-ориентированного подхода / О.И. Федяев, Т.Е. Жабская // Штучний інтелект. &ndash; 2010. &ndash; № 3. &ndash; С. 679-686. &ndash; Бібліогр.: 5 назв. &ndash; рос.</li>
+									<!-- Теория систем -->
+									<li>Многоагентные системы &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="http://www.aiportal.ru/articles/multiagent-systems/multiagent-systems.html" target="_blank">http://www.aiportal.ru/articles/multiagent-systems/multiagent-systems.html</a></li>
+									<li>Michael Wooldridge, An Introduction to MultiAgent Systems, John Wiley and Sons Ltd, 2002, paperback, 366 pages</li>
+									<li>Инструментальная среда JACK &ndash; [Электронный ресурс]. &ndash; Режим доступа: <a href="https://www.codeproject.com/Articles/13644/WebControls/WebControls/" target="_blank">https://www.codeproject.com/Articles/13644/WebControls/WebControls/</a></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+					<!--/.Card-->
+				</div>
+			</div>
+			<!--Right sidebar-->
+			<div class="col-2">
+				<div id="scrollspy" class="sticky" style="position: fixed; top: 70px;">
+					<ul class="nav nav-pills flex-column smooth-scroll" data-allow-hashes="true">
+						<li class="nav-item"><a class="nav-link active" href="#intro">Introduction</a></li>
+						<li class="nav-item"><a class="nav-link" href="#theme-actuality">1. Relevance of the topic</a></li>
+						<li class="nav-item"><a class="nav-link" href="#goals">2. Goals and objectives,<br>planned practical results</a></li>
+						<li class="nav-item"><a class="nav-link" href="#sources">3. Sources overview</a></li>
+						<li class="nav-item"><a class="nav-link" href="#multi-agent-systems">4. Multi-agent systems<br>theory</a></li>
+						<li class="nav-item"><a class="nav-link" href="#models">5. Creating adequate<br>agent models</a></li>
+						<li class="nav-item"><a class="nav-link" href="#ide">6. Environment for creating<br>multi-agent systems</a></li>
+						<li class="nav-item"><a class="nav-link" href="#final">Conclusion</a></li>
+						<li class="nav-item"><a class="nav-link" href="#links">References</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="page-footer center-on-small-only stylish-color-dark">
+		<!--Social buttons-->
+		<div class="social-section text-center container-fluid">
+			<div class="row">
+				<div class="col">
+					<h1>Contacts</h1>
+				</div>
+				<!-- Social -->
+				<div class="col-6">
+					<ul>
+						<li>
+							<a href="https://github.com/smedgaus" target="_blank">
+								<button type="button" class="btn btn-elegant text-capitalize">
+									<img src="../images/icons/git.png" width="18px" height="18px">
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://vk.com/smedgaus" target="_blank">
+								<button type="button" class="btn unique-color text-capitalize">
+									<img src="../images/icons/vk.png" width="18px" height="18px">
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/sergey-medgaus-70b22a78/"  target="_blank">
+								<button type="button" class="btn special-color text-capitalize">
+									<img src="../images/icons/linkedin.png" width="18px" height="18px">
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.facebook.com/smedgaus"  target="_blank">
+								<button type="button" class="btn indigo darken-3 text-capitalize">
+									<img src="../images/icons/facebook.png" width="18px" height="18px">
+								</button>
+							</a>
+						</li>
+						<li>
+							<a href="https://play.google.com/store/apps/developer?id=MedgausApps"  target="_blank">
+								<button type="button" class="btn green darken-2 text-capitalize">
+									<img src="../images/icons/android.png" width="18px" height="18px">
+								</button>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col text-left">
+					<img src="../images/icons/skype.png" class="mr-1" width="18px" height="18px"> sergey.medgaus <br/>
+					<a href="mailto:medgaus-sergey@yandex.com">
+						<img src="../images/icons/mail.png" class="mr-1" width="18px" height="18px"> medgaus-sergey@yandex.com
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<!--/.Social buttons-->
+
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="row">
+				<div class="col clearfix">
+					<span class="float-left ml-4">Copyright 2017 &#169; Sergey Medgaus</span>
+
+					<a href="./abstract_ua.html" target="_self">
+						<span class="float-right mr-4">
+							<img src="../images/ua.png" alt="Укр" width="25px" height="25px"> Укр
+						</span>
+					</a>
+					<a href="./abstract_ru.html" target="_self">
+						<span class="float-right mr-4">
+							<img src="../images/ru.png" alt="Рус" width="25px" height="25px"> Рус
+						</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--/.Copyright-->
+	</footer>
+
+	<!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="../js/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="../js/mdb.min.js"></script>
+
+	<script type="text/javascript" src="../js/scrolling-script.js"></script>
+
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
+</body>
+</html>
